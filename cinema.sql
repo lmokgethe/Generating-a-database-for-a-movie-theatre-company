@@ -1,11 +1,4 @@
--- phpMyAdmin SQL
--- Host: localhost
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.4.1
---
--- --------------------------------------------------------
 
---
 --  table `ADMIN`
 --
 
@@ -87,7 +80,7 @@ INSERT INTO `ADMIN` (`Id`, `Password`, `First`, `Last`, `Age`, `Position`) VALUE
 -- --------------------------------------------------------
 
 --
--- table `CINEMA`
+-- Table structure for table `CINEMA`
 --
 
 CREATE TABLE `CINEMA` (
@@ -98,7 +91,7 @@ CREATE TABLE `CINEMA` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- data for table `CINEMA`
+-- Dumping data for table `CINEMA`
 --
 
 INSERT INTO `CINEMA` (`Id`, `Name`, `Address`, `Phone_Number`) VALUES
@@ -436,7 +429,7 @@ INSERT INTO `CUSTOMER` (`Id`, `Phone_number`, `Email`, `Payment_Method`, `Card_n
 -- --------------------------------------------------------
 
 --
--- table `DISCOUNT`
+--  table `DISCOUNT`
 --
 
 CREATE TABLE `DISCOUNT` (
@@ -446,7 +439,7 @@ CREATE TABLE `DISCOUNT` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
---data for table `DISCOUNT`
+-- data for table `DISCOUNT`
 --
 
 INSERT INTO `DISCOUNT` (`ID`, `Amount`, `Discout_Type`) VALUES
@@ -462,7 +455,7 @@ INSERT INTO `DISCOUNT` (`ID`, `Amount`, `Discout_Type`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `GENRE`
+--  table `GENRE`
 --
 
 CREATE TABLE `GENRE` (
@@ -471,7 +464,7 @@ CREATE TABLE `GENRE` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
---  table `GENRE`
+-- data for table `GENRE`
 --
 
 INSERT INTO `GENRE` (`Id`, `Genre_Title`) VALUES
@@ -497,7 +490,7 @@ CREATE TABLE `ITEM` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `ITEM`
+--  data for table `ITEM`
 --
 
 INSERT INTO `ITEM` (`Id`, `Description`) VALUES
@@ -528,47 +521,278 @@ CREATE TABLE `ITEM_LINE` (
   `Item_Id` int(8) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+--  data for table `ITEM_LINE`
+--
+
+INSERT INTO `ITEM_LINE` (`Receipt_Id`, `Item_Id`) VALUES
+(17, 4),
+(49, 12),
+(23, 13),
+(57, 13),
+(24, 11),
+(43, 9),
+(58, 12),
+(12, 9),
+(48, 10),
+(32, 3),
+(14, 1),
+(53, 1),
+(76, 5),
+(55, 12),
+(80, 2),
+(36, 7),
+(29, 7),
+(57, 9),
+(12, 11),
+(27, 13),
+(72, 15),
+(71, 14),
+(78, 12),
+(54, 1),
+(12, 3),
+(43, 10),
+(5, 15),
+(26, 4),
+(69, 14),
+(80, 1),
+(62, 7),
+(50, 6),
+(13, 6),
+(3, 8),
+(14, 10),
+(49, 8),
+(22, 2),
+(24, 3),
+(7, 1),
+(55, 14),
+(1, 5),
+(66, 5),
+(76, 4),
+(55, 4),
+(49, 7),
+(15, 11),
+(21, 2),
+(57, 2),
+(13, 2),
+(56, 12),
+(20, 1),
+(43, 4),
+(18, 12),
+(28, 6),
+(35, 9),
+(72, 3),
+(78, 2),
+(65, 2),
+(30, 15),
+(42, 6),
+(33, 11),
+(22, 9),
+(29, 7),
+(21, 1),
+(3, 5),
+(58, 15),
+(4, 13),
+(8, 15),
+(9, 14),
+(27, 11),
+(12, 6),
+(63, 14),
+(16, 13),
+(29, 14),
+(15, 12),
+(56, 9),
+(55, 11),
+(22, 13),
+(36, 10),
+(76, 15),
+(48, 11),
+(78, 5),
+(33, 12),
+(68, 4),
+(68, 2),
+(6, 13),
+(9, 14),
+(17, 5),
+(75, 4),
+(69, 13),
+(4, 15),
+(27, 5),
+(43, 11),
+(16, 2),
+(69, 1),
+(67, 4),
+(59, 14),
+(80, 12);
+
 -- --------------------------------------------------------
 
 --
---  table `MEMBERSHIP`
+-- table `MEMBERSHIP`
 --
 
 CREATE TABLE `MEMBERSHIP` (
   `Id` int(8) NOT NULL,
-  `First_Name` varchar(30) NOT NULL,
-  `Last_Name` varchar(30) NOT NULL,
-  `Card_Number` int(30) NOT NULL,
-  `Account_Number` int(10) NOT NULL,
-  `Phone_Number` int(10) NOT NULL,
+  `First_Name` varchar(100) NOT NULL,
+  `Last_Name` varchar(100) NOT NULL,
+  `Card_Number` varchar(30) NOT NULL,
+  `Account_Number` varchar(20) NOT NULL,
+  `Phone_Number` varchar(13) NOT NULL,
   `Points_Acquired` int(10) NOT NULL,
-  `Address` varchar(30) DEFAULT NULL,
-  `Age` int(2) DEFAULT NULL,
+  `Address` varchar(100) DEFAULT NULL,
+  `Age` int(3) DEFAULT NULL,
   `Sex` varchar(1) DEFAULT NULL,
-  `Email` varchar(30) DEFAULT NULL
+  `Email` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- data for table `MEMBERSHIP`
+--
+
+INSERT INTO `MEMBERSHIP` (`Id`, `First_Name`, `Last_Name`, `Card_Number`, `Account_Number`, `Phone_Number`, `Points_Acquired`, `Address`, `Age`, `Sex`, `Email`) VALUES
+(1, 'Clayton', 'Hunt', '36216689825206', '40667427199', '11498671923', 7646, 'P.O. Box 646, 3969 Sit Av.', 41, 'F', 'cursus@vulputaterisus.org'),
+(2, 'Amber', 'Brady', '36442956099909', '10887544999', '18135526936', 4415, '973-8322 Augue Road', 39, 'F', 'imperdiet@dapibus.co.uk'),
+(3, 'Emery', 'Griffith', '36726232009983', '86456407699', '17945243497', 7453, 'Ap #149-3004 Mus. Avenue', 48, 'F', 'est.ac.mattis@ante.edu'),
+(4, 'Hall', 'Church', '36044979983430', '88923339299', '15915861616', 8039, 'Ap #582-6660 Metus. Road', 37, 'F', 'vitae.sodales@metus.co.uk'),
+(5, 'Burke', 'Mcclain', '36766339427662', '71556728199', '15004164395', 254, 'Ap #100-656 Sem Road', 40, 'F', 'luctus@facilisis.net'),
+(6, 'Howard', 'Ortega', '36232269756380', '73876599399', '15431280985', 1188, '108 Tincidunt, Street', 52, 'F', 'Nulla@etcommodoat.ca'),
+(7, 'Louis', 'Cross', '36671355272788', '73476278699', '18864977301', 5034, 'P.O. Box 278, 2384 Quisque Rd.', 43, 'F', 'est.vitae@scelerisque.co.uk'),
+(8, 'Ebony', 'Holden', '36574162045696', '19954189799', '19781505321', 2088, 'P.O. Box 259, 9472 Ligula. Rd.', 35, 'F', 'amet.dapibus@Namporttitor.net'),
+(9, 'Kalia', 'Mercado', '36549498028731', '71761031799', '18809976790', 573, 'Ap #937-8586 Sit Avenue', 54, 'F', 'semper@enimMaurisquis.edu'),
+(10, 'Ingrid', 'Ayers', '36560139418991', '03944881699', '12112997027', 9002, '2754 Arcu St.', 23, 'F', 'Nam.interdum.enim@etmagnisdis.net'),
+(11, 'Lucy', 'Reynolds', '36116268988385', '84544060099', '15509156598', 4788, 'Ap #241-732 Quisque Street', 49, 'M', 'vulputate.posuere@nisi.edu'),
+(12, 'Dante', 'Stokes', '36402556201776', '78387778799', '11625323475', 7029, 'P.O. Box 471, 3075 Purus. Road', 34, 'M', 'nec@quistristique.edu'),
+(13, 'Martha', 'Sanford', '36399141157176', '54953433499', '11547287114', 1147, 'P.O. Box 677, 4656 Gravida Rd.', 38, 'M', 'convallis.ante.lectus@Integer.ca'),
+(14, 'Sara', 'Drake', '36495445314115', '01282306199', '11076798861', 121, 'P.O. Box 746, 9964 Quis Avenue', 24, 'M', 'amet@cubiliaCuraePhasellus.ca'),
+(15, 'Patricia', 'Key', '36499863500536', '53920549499', '18292524249', 7431, 'P.O. Box 174, 867 Odio, Av.', 43, 'M', 'sagittis.lobortis.mauris@condimentum.org'),
+(16, 'Yardley', 'Avery', '36352869514540', '51619237499', '12443452764', 1966, 'Ap #920-5412 Adipiscing. Street', 31, 'M', 'vel.lectus.Cum@Sedpharetra.edu'),
+(17, 'Kim', 'Landry', '36287832243860', '44685043799', '15108842637', 2844, '172-538 Sed St.', 25, 'M', 'amet.nulla.Donec@eu.edu'),
+(18, 'Karyn', 'Hayes', '36296315727943', '82750417299', '19416055134', 7111, 'P.O. Box 226, 5812 Duis Avenue', 21, 'M', 'erat@aliquet.edu'),
+(19, 'Jolene', 'Guy', '36456235999853', '56893471999', '15028863322', 8999, '8615 Magnis Road', 19, 'M', 'erat.eget.tincidunt@purus.ca'),
+(20, 'Hollee', 'Lowery', '36092040490299', '00824668499', '19816895349', 8749, '891-1827 Conubia Road', 30, 'M', 'nonummy.Fusce.fermentum@disparturientmontes.net'),
+(21, 'McKenzie', 'Hebert', '36461969578352', '73218408799', '12497354984', 1498, 'P.O. Box 191, 6942 Eget Road', 35, 'F', 'non.feugiat@ullamcorperDuiscursus.ca'),
+(22, 'Tanisha', 'Mcdonald', '36272400162734', '39327645599', '13633142528', 411, 'P.O. Box 611, 3038 Phasellus Road', 56, 'F', 'tellus.justo.sit@pharetrasedhendrerit.org'),
+(23, 'George', 'Long', '36501746485809', '53334986899', '15513583994', 3045, '463-4023 Ultrices. Ave', 37, 'F', 'Pellentesque.ultricies.dignissim@suscipitnonummy.ca'),
+(24, 'Desiree', 'Wilder', '36007130031464', '65914481199', '17557030955', 1176, 'Ap #559-1014 Maecenas Rd.', 48, 'F', 'diam@eu.co.uk'),
+(25, 'Astra', 'Ayers', '36670813932736', '58583541699', '18255721393', 6468, '825 Facilisis St.', 18, 'F', 'Nullam.suscipit@gravida.org'),
+(26, 'Fleur', 'Schroeder', '36646377555691', '83350708099', '16641270404', 2113, '533-1698 Hymenaeos. Ave', 28, 'F', 'Aliquam.fringilla@convalliserateget.co.uk'),
+(27, 'Emi', 'Bowers', '36850807918517', '52269814399', '18607023646', 8529, 'P.O. Box 963, 6268 Lacus. Road', 33, 'F', 'ipsum@Morbi.org'),
+(28, 'Amity', 'Roy', '36522810815887', '08620873999', '12186665587', 8793, '6070 Vitae St.', 38, 'F', 'tristique.ac@ullamcorpermagnaSed.co.uk'),
+(29, 'Shelby', 'Merritt', '36590691811903', '18939206499', '16478575156', 934, '1484 Sagittis. Avenue', 58, 'F', 'orci.lacus@fermentum.ca'),
+(30, 'Deacon', 'Dodson', '36062828612901', '81849373499', '12798224901', 5499, 'Ap #234-6582 Lectus Rd.', 27, 'F', 'luctus.vulputate.nisi@metus.ca'),
+(31, 'Jade', 'Fuller', '36884649793226', '57656142099', '17321610238', 9809, '8575 Lorem, Road', 35, 'M', 'sit@tinciduntvehicula.ca'),
+(32, 'Tanner', 'Marsh', '36978130829364', '05551188399', '18402849422', 4666, '1330 Ut, Avenue', 54, 'M', 'amet@idanteNunc.com'),
+(33, 'Vivian', 'Snyder', '36877868672188', '40360387899', '18805114247', 509, 'Ap #510-8685 Posuere Rd.', 52, 'M', 'euismod@atfringilla.edu'),
+(34, 'Wade', 'Valdez', '36906415080924', '64961425699', '13778361021', 7625, '869-5362 Dictum Street', 37, 'M', 'mollis@vel.com'),
+(35, 'Riley', 'Guerrero', '36829386713077', '93749020299', '12113525088', 6662, 'P.O. Box 157, 6350 Mauris Avenue', 49, 'M', 'mi.fringilla@Mauris.ca'),
+(36, 'Serena', 'Neal', '36471229762670', '76242490199', '14293207783', 4906, '5107 Elit, Road', 49, 'M', 'non.cursus@vulputate.com'),
+(37, 'Maia', 'Perez', '36983102098923', '22240939499', '13498794447', 3374, '587-3162 Lobortis Street', 26, 'M', 'dis.parturient@massaMauris.org'),
+(38, 'Hedley', 'Carney', '36218073614287', '60503951399', '13892704560', 5260, 'Ap #177-7493 Egestas. St.', 18, 'M', 'interdum.ligula.eu@nunc.edu'),
+(39, 'Meredith', 'Delacruz', '36986830952659', '56760369199', '12353828878', 2368, 'P.O. Box 316, 893 Mauris St.', 57, 'M', 'quis@mi.net'),
+(40, 'Latifah', 'Jacobson', '36444483165435', '84738302699', '11602577411', 4000, 'P.O. Box 978, 1245 Commodo Street', 56, 'M', 'elit.elit@scelerisque.com'),
+(41, 'Lunea', 'Henderson', '36350463773645', '72458433999', '18392605569', 2047, '4949 Sem Avenue', 56, 'F', 'dictum.Proin.eget@Donec.edu'),
+(42, 'Kiayada', 'Price', '36325639158681', '88828277999', '15559594765', 8966, '5421 Cras St.', 41, 'F', 'Nullam@Aliquamerat.net'),
+(43, 'Paloma', 'Cline', '36898999230944', '40646017699', '15374890862', 6823, '403-8918 Enim Road', 43, 'F', 'erat.vel.pede@eunequepellentesque.co.uk'),
+(44, 'Armando', 'Olsen', '36954136263957', '91609296199', '19605445663', 7072, 'Ap #205-5989 Mollis Av.', 33, 'F', 'sapien.cursus@leoin.com'),
+(45, 'Orlando', 'Stewart', '36424491698031', '37368569999', '11635995066', 4080, 'P.O. Box 232, 9840 Arcu. Avenue', 44, 'F', 'vel.lectus.Cum@parturientmontes.co.uk'),
+(46, 'Jasper', 'Mcpherson', '36203751966795', '16554410599', '17211783214', 3241, 'P.O. Box 781, 1475 Et Ave', 18, 'F', 'dignissim.pharetra@hendreritaarcu.net'),
+(47, 'Preston', 'Crawford', '36920348277622', '36802339499', '18848347789', 9534, '7412 Arcu. Av.', 34, 'F', 'lectus.pede@morbi.edu'),
+(48, 'Tatum', 'Guthrie', '36154899182466', '73850591699', '13581267303', 5419, '256-157 Hendrerit Av.', 24, 'F', 'magnis.dis.parturient@elementum.co.uk'),
+(49, 'Macy', 'Howe', '36404689702308', '36361559799', '13261043637', 8061, '1816 Lorem Av.', 31, 'F', 'amet.orci.Ut@nisiCum.ca'),
+(50, 'Lance', 'Figueroa', '36706085857043', '40863020099', '17512027159', 5563, '2695 Dis Road', 27, 'F', 'sociis@eu.co.uk'),
+(51, 'Murphy', 'Romero', '36525332351497', '42560645899', '11829271289', 9862, '554-1531 Rutrum, Av.', 54, 'M', 'lorem.ut@diamvelarcu.com'),
+(52, 'Cameron', 'Burns', '36429512839514', '94854546899', '18584115093', 7603, '3374 Donec Rd.', 57, 'M', 'ante@Pellentesquehabitantmorbi.com'),
+(53, 'Yoshio', 'Henry', '36652295683730', '13851821199', '18989980574', 7801, 'P.O. Box 906, 2264 Libero Av.', 19, 'M', 'ridiculus@etnetuset.com'),
+(54, 'Lynn', 'Hamilton', '36557053158512', '75993975499', '18492659486', 2774, '320-819 Sit St.', 21, 'M', 'neque.venenatis@nuncinterdumfeugiat.org'),
+(55, 'Angelica', 'Kent', '36236000379535', '80671965999', '13636325389', 9910, 'Ap #897-5443 Tellus, Ave', 22, 'M', 'Vivamus@Suspendisse.org'),
+(56, 'Zachery', 'Pratt', '36143300985559', '63312351899', '14862608540', 2678, '101-5275 Etiam Rd.', 60, 'M', 'erat.volutpat@imperdietullamcorperDuis.ca'),
+(57, 'Ira', 'Pitts', '36588237561750', '92989578299', '11908553326', 4594, '987 Sodales St.', 49, 'M', 'pharetra.nibh@placerat.ca'),
+(58, 'Whitney', 'Sloan', '36876114516835', '02566550399', '17663989403', 6253, 'P.O. Box 117, 3339 Eu Rd.', 19, 'M', 'risus.at@nunc.com'),
+(59, 'Benedict', 'Hunt', '36269211048979', '56953074999', '19539188316', 6150, 'Ap #306-6668 Lorem Street', 23, 'M', 'mi.tempor.lorem@Loremipsum.org'),
+(60, 'Mikayla', 'Kinney', '36007958345525', '72894384099', '15055980256', 9420, 'P.O. Box 196, 276 Ornare Ave', 34, 'M', 'nec.quam.Curabitur@DonecnibhQuisque.ca'),
+(61, 'Yuli', 'Mcclain', '36022488898307', '63528944399', '13831091748', 9159, 'P.O. Box 770, 2997 Lorem St.', 56, 'F', 'dictum.placerat.augue@velitCras.ca'),
+(62, 'Conan', 'Holden', '36459404650372', '57582649699', '18962470941', 2904, '6147 Nunc Road', 34, 'F', 'sociis.natoque.penatibus@enimgravidasit.co.uk'),
+(63, 'Sloane', 'Kaufman', '36065537387137', '02346293599', '19386934111', 4082, '7827 Dui. St.', 51, 'F', 'convallis@metus.ca'),
+(64, 'Graiden', 'Howard', '36059787712870', '84383809099', '13339200367', 8916, '997-7237 Pellentesque Avenue', 31, 'F', 'Mauris.vel@sitamet.ca'),
+(65, 'Kato', 'Sims', '36560725765805', '99253450999', '13654064392', 6823, '771-4893 Scelerisque Rd.', 19, 'F', 'egestas@Aliquam.com'),
+(66, 'Cole', 'Cain', '36689093113130', '48410560899', '13673179001', 2940, '139-2331 Libero. Ave', 38, 'F', 'tempor@duinec.net'),
+(67, 'Myles', 'Francis', '36289597933602', '03508627699', '18418764167', 1372, 'P.O. Box 404, 1135 Lacus. Rd.', 22, 'F', 'ipsum@in.edu'),
+(68, 'Kirestin', 'Cox', '36634819366497', '20689465599', '12771657322', 3861, 'Ap #498-8800 Vel Rd.', 58, 'F', 'id.erat.Etiam@tortorat.com'),
+(69, 'Rhoda', 'Fowler', '36747095205047', '53216515299', '12231562561', 746, 'P.O. Box 487, 7175 Hendrerit Rd.', 42, 'F', 'Sed@arcuSedeu.com'),
+(70, 'Omar', 'Powers', '36811393900152', '54270108399', '12867594864', 3701, 'Ap #854-8973 A Rd.', 37, 'F', 'luctus.Curabitur.egestas@metusvitaevelit.ca'),
+(71, 'Kane', 'Washington', '36797217223386', '87373925799', '16995779027', 8046, 'P.O. Box 214, 1257 In, Avenue', 29, 'M', 'gravida.sit.amet@Sedauctor.co.uk'),
+(72, 'Velma', 'Roberts', '36583319403054', '87279798899', '12251981072', 5118, '901-5454 Metus St.', 54, 'M', 'purus.sapien@necanteMaecenas.ca'),
+(73, 'Rebekah', 'Stafford', '36169106873384', '46782726699', '12355977014', 7017, 'P.O. Box 884, 2234 Mauris St.', 59, 'M', 'lobortis@consectetuer.co.uk'),
+(74, 'Holmes', 'Lancaster', '36933413539628', '69242848499', '18758750798', 8314, 'Ap #361-9701 Nullam St.', 27, 'M', 'massa.Mauris@Sedeueros.co.uk'),
+(75, 'Lucian', 'Barnes', '36551560422149', '87513480399', '14831103105', 460, '492-7942 Vestibulum St.', 22, 'M', 'cursus@nuncsitamet.co.uk'),
+(76, 'Veronica', 'Murphy', '36035351205988', '77241230199', '13392491938', 1892, '888-7885 Est Road', 57, 'M', 'gravida.molestie.arcu@pellentesqueegetdictum.edu'),
+(77, 'Hollee', 'Walton', '36628930058850', '06347286499', '12766210412', 8068, 'Ap #745-7671 Velit. Road', 48, 'M', 'rutrum@molestieintempus.org'),
+(78, 'Tashya', 'Goodman', '36028202531991', '37897921999', '13683326367', 2299, '565-6193 Ipsum Street', 32, 'M', 'tincidunt.adipiscing.Mauris@Sed.co.uk'),
+(79, 'Kerry', 'Levy', '36916628666468', '90916712099', '13256330554', 5012, '583-1432 Sagittis. Rd.', 60, 'M', 'lobortis.ultrices.Vivamus@fringilla.org'),
+(80, 'Angelica', 'Murray', '36602446757099', '48900985099', '18838561622', 9652, '591-6148 Egestas Rd.', 23, 'M', 'blandit@euaccumsan.com'),
+(81, 'Gloria', 'Payne', '36088906562452', '25300878999', '14147890994', 2448, 'Ap #313-2019 Morbi Rd.', 24, 'F', 'est.mollis@dolorNullasemper.com'),
+(82, 'April', 'Mayo', '36046358296144', '41622436699', '15168303199', 6556, 'Ap #512-4358 Eu Ave', 39, 'F', 'nec.imperdiet.nec@aenimSuspendisse.com'),
+(83, 'Justine', 'Daniel', '36472571471787', '68685680099', '18425779140', 7042, 'P.O. Box 611, 258 Et, Av.', 20, 'F', 'vel@metusVivamus.com'),
+(84, 'Carlos', 'Carr', '36284598127825', '04737196399', '12831502842', 8389, 'P.O. Box 425, 2555 Felis. Rd.', 51, 'F', 'suscipit.nonummy.Fusce@rutrumjustoPraesent.co.uk'),
+(85, 'Chiquita', 'Jensen', '36725108673799', '08600174899', '19775412966', 9858, '2194 Amet, St.', 55, 'F', 'justo.faucibus@diamProindolor.org'),
+(86, 'Trevor', 'Brewer', '36642483238330', '60783113199', '17545959983', 2140, '246-4434 Adipiscing Rd.', 50, 'F', 'nonummy@at.ca'),
+(87, 'Thomas', 'Mcfarland', '36188464393926', '01291686699', '15321894176', 5744, '669-101 Non Av.', 46, 'F', 'Maecenas.ornare@ascelerisquesed.co.uk'),
+(88, 'Shannon', 'Mcfarland', '36027440839109', '84371235999', '15873193339', 3815, 'P.O. Box 869, 3839 Nam St.', 32, 'F', 'pharetra.ut@atpedeCras.com'),
+(89, 'Indira', 'Hull', '36377375034204', '67447414399', '18172149371', 7084, 'P.O. Box 269, 9720 Proin Road', 48, 'F', 'ipsum.porta.elit@Donecvitae.ca'),
+(90, 'Adena', 'Sweeney', '36070512306292', '67306866699', '12657146142', 6733, '5134 Sed Av.', 27, 'F', 'fermentum.risus.at@nibhdolornonummy.co.uk'),
+(91, 'Todd', 'Donaldson', '36380854517160', '15688714599', '15941179097', 3173, '900-2063 Leo. St.', 20, 'M', 'quam.Curabitur@feugiatSed.edu'),
+(92, 'Deborah', 'Sexton', '36567666224460', '16543740299', '11476737402', 8924, 'Ap #528-5046 Cubilia Ave', 48, 'M', 'dolor@Quisquepurussapien.edu'),
+(93, 'Cyrus', 'Lee', '36819630627876', '15690309599', '14194537159', 9895, '7098 Vestibulum Street', 39, 'M', 'lacinia.mattis@pretium.edu'),
+(94, 'Talon', 'Harris', '36581474851588', '84670702699', '11305282599', 9998, 'P.O. Box 239, 7876 Morbi St.', 27, 'M', 'elit@ametmetus.net'),
+(95, 'Marvin', 'Farley', '36197494004999', '32712389199', '15925795299', 6447, 'P.O. Box 281, 1744 Rutrum Av.', 19, 'M', 'Ut.nec@varius.ca'),
+(96, 'Lesley', 'Morrison', '36057253585457', '40876976599', '11895520000', 2285, 'Ap #905-6072 Ornare Ave', 60, 'M', 'nec@lectuspede.ca'),
+(97, 'Byron', 'Boyer', '36491259985397', '60443616599', '11768403464', 1238, 'Ap #837-7773 Erat Street', 38, 'M', 'nibh.lacinia@nisinibhlacinia.org'),
+(98, 'Kevyn', 'Spencer', '36827880375989', '39616202399', '18686975549', 5144, '4378 Orci St.', 35, 'M', 'vel@nuncrisusvarius.net'),
+(99, 'Alexandra', 'Estes', '36283162655765', '44976834599', '16096725156', 9802, 'Ap #225-8482 A Ave', 50, 'M', 'nec.ante@urnaconvallis.net'),
+(100, 'Kuame', 'Gentry', '36421106964030', '04536443199', '19086175289', 8521, 'P.O. Box 160, 5401 Nostra, Road', 47, 'M', 'semper.erat@loremeu.co.uk');
 
 -- --------------------------------------------------------
 
 --
--- table `MOVIE`
+--  table `MOVIE`
 --
 
 CREATE TABLE `MOVIE` (
   `Id` int(8) NOT NULL,
   `Title` varchar(30) NOT NULL,
   `Language` varchar(20) NOT NULL,
-  `Release_Date` date NOT NULL,
+  `Release_Date` varchar(20) NOT NULL,
   `Lead_Cast` varchar(30) DEFAULT NULL,
   `Director_Name` varchar(30) DEFAULT NULL,
   `Movie_ratings_Id` int(8) DEFAULT NULL,
   `Movie_supplier_Id` int(8) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+--  data for table `MOVIE`
+--
+
+INSERT INTO `MOVIE` (`Id`, `Title`, `Language`, `Release_Date`, `Lead_Cast`, `Director_Name`, `Movie_ratings_Id`, `Movie_supplier_Id`) VALUES
+(1, 'Cache', 'English', 'Dec 10, 2019', 'Michael Haneke', 'Michael Haneke', 6, 1),
+(2, '12 years a slave', 'English', 'Dec 26, 2019', 'Chiwetel Ejiofor', 'Steve McQueen', 3, 4),
+(3, 'Walking Life', 'English', 'Dec 24, 2019', 'Richard Linklater', 'Richard Linklater,', 5, 10),
+(4, 'Pi', 'English', 'Dec 11, 2019', 'enim', 'Suraj Sharma', 4, 4),
+(5, 'Se7en', 'English', 'Dec 12, 2019', 'Brad Pitt', 'David Fincher', 5, 3),
+(6, 'Taxi Driver', 'English', 'Dec 31, 2019', 'Robert De Niro', 'Martin Scorsese', 6, 7),
+(7, 'Intersteller', 'English', 'Dec 30, 2019', 'Matt Damon', 'Christopher Nolan', 5, 9),
+(8, 'Fantastic Mr Fox', 'English', 'Dec 30, 2019', 'posuere,', 'Wes Anderson', 6, 8),
+(9, '28 Days Later...', 'English', 'Dec 15, 2019', 'ac', 'Danny Boyle', 6, 8),
+(10, 'Argo', 'English', 'Jan 7, 2020', 'Ben Affleck', 'Ben Affleck', 6, 6),
+(11, 'Shazam!', 'English', 'Dec 23, 2019', 'Zachary Levi', 'David F. Sandberg', 6, 1),
+(12, 'Little', 'English', 'Dec 19, 2019', 'Marsai Martin', 'Tina Gordon', 6, 2),
+(13, 'The Sun Is Also A Star', 'English', 'Dec 20, 2019', 'Yara Shahidi', 'Ry Russo-Young', 5, 4),
+(14, 'Tall Girl', 'English', 'Jan 7, 2020', 'Ava Michelle', 'Nzingha Stewart', 6, 7),
+(15, 'The Silence', 'English', 'Dec 11, 2019', 'Kiernan Shipka', 'ohn R. Leonetti', 5, 7);
+
 -- --------------------------------------------------------
 
 --
--- table `MOVIE_GENRE`
+--  table `MOVIE_GENRE`
 --
 
 CREATE TABLE `MOVIE_GENRE` (
@@ -576,16 +800,49 @@ CREATE TABLE `MOVIE_GENRE` (
   `Movie_ID` int(8) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+--  data for table `MOVIE_GENRE`
+--
+
+INSERT INTO `MOVIE_GENRE` (`Genre_Id`, `Movie_ID`) VALUES
+(5, 9),
+(4, 7),
+(9, 4),
+(6, 14),
+(9, 5),
+(1, 10),
+(9, 2),
+(4, 3),
+(9, 6),
+(3, 12),
+(1, 1),
+(3, 8),
+(3, 11),
+(6, 13),
+(5, 15);
+
 -- --------------------------------------------------------
 
 --
--- table `MOVIE_RATINGS`
+--  table `MOVIE_RATINGS`
 --
 
 CREATE TABLE `MOVIE_RATINGS` (
   `Id` int(8) NOT NULL,
   `Rating_Description` varchar(30) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+--  table `MOVIE_RATINGS`
+--
+
+INSERT INTO `MOVIE_RATINGS` (`Id`, `Rating_Description`) VALUES
+(1, '5/10'),
+(2, '6/10'),
+(3, '7/10'),
+(4, '8/10'),
+(5, '9/10'),
+(6, '10/10');
 
 -- --------------------------------------------------------
 
@@ -596,26 +853,68 @@ CREATE TABLE `MOVIE_RATINGS` (
 CREATE TABLE `MOVIE_SHOWING` (
   `Id` int(8) NOT NULL,
   `Duration` int(8) NOT NULL,
-  `Start_time` date NOT NULL,
+  `Start_time` varchar(20) NOT NULL,
   `Cinema_Id` int(8) DEFAULT NULL,
   `Movie_Id` int(8) DEFAULT NULL,
   `Showing_room_Id` int(8) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- data for table `MOVIE_SHOWING`
+--
+
+INSERT INTO `MOVIE_SHOWING` (`Id`, `Duration`, `Start_time`, `Cinema_Id`, `Movie_Id`, `Showing_room_Id`) VALUES
+(1, 120, '7.15PM', 1, 12, 1003),
+(2, 133, '7.15PM', 2, 10, 1004),
+(3, 147, '8PM', 10, 7, 1002),
+(4, 149, '8PM', 5, 14, 1004),
+(5, 148, '10PM', 10, 5, 1000),
+(6, 135, '10PM', 3, 11, 1004),
+(7, 117, '11PM', 2, 11, 1001),
+(8, 121, '11PM', 2, 2, 1004),
+(9, 112, '7.15PM', 8, 1, 1006),
+(10, 123, '7.15PM', 8, 13, 1004),
+(11, 125, '8PM', 1, 4, 1005),
+(12, 125, '8PM', 2, 8, 1003),
+(13, 131, '10PM', 6, 14, 1000),
+(14, 135, '10PM', 8, 5, 1003),
+(15, 110, '11PM', 6, 11, 1001),
+(16, 122, '11PM', 4, 2, 1006),
+(17, 123, '7.15PM', 9, 5, 1007),
+(18, 123, '7.15PM', 3, 4, 1007),
+(19, 138, '8PM', 8, 9, 1005),
+(20, 138, '8PM', 1, 5, 1001);
+
 -- --------------------------------------------------------
 
 --
--- table `MOVIE_SUPPLIER`
+--  table `MOVIE_SUPPLIER`
 --
 
 CREATE TABLE `MOVIE_SUPPLIER` (
   `Id` int(10) NOT NULL,
-  `First_Name` varchar(10) NOT NULL,
-  `Last_Name` varchar(10) NOT NULL,
-  `Phone_Number` int(10) NOT NULL,
-  `Address` varchar(30) DEFAULT NULL,
+  `First_Name` varchar(30) NOT NULL,
+  `Last_Name` varchar(30) NOT NULL,
+  `Phone_Number` varchar(13) NOT NULL,
+  `Address` varchar(100) DEFAULT NULL,
   `Number_of_Movies` int(5) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+--  data for table `MOVIE_SUPPLIER`
+--
+
+INSERT INTO `MOVIE_SUPPLIER` (`Id`, `First_Name`, `Last_Name`, `Phone_Number`, `Address`, `Number_of_Movies`) VALUES
+(1, 'Helen', 'Vaughn', '17819887302', '274-8274 Quisque Road', 1),
+(2, 'Gisela', 'Booth', '11531839189', '3484 Ut Av.', 3),
+(3, 'Laura', 'Fisher', '19826478721', 'Ap #294-6904 Mauris Rd.', 2),
+(4, 'Denise', 'Mcclure', '16285261907', '555-4487 Mauris Road', 2),
+(5, 'Alfreda', 'Salas', '12367878558', '2212 Et St.', 1),
+(6, 'Patrick', 'Juarez', '17271351418', '929-3449 Lobortis St.', 2),
+(7, 'Ferris', 'Flores', '13669182502', 'P.O. Box 724, 6449 Tempus St.', 1),
+(8, 'Keefe', 'Sloan', '14875659439', '224-2666 Sollicitudin St.', 2),
+(9, 'Omar', 'Mcmillan', '17888883523', '170-5929 Erat. Street', 1),
+(10, 'Haley', 'Nixon', '11117874308', 'Ap #591-4341 Purus. Street', 1);
 
 -- --------------------------------------------------------
 
@@ -628,54 +927,293 @@ CREATE TABLE `OFFER` (
   `Ticket_Id` int(8) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+--  data for table `OFFER`
+--
+
+INSERT INTO `OFFER` (`Discount_Id`, `Ticket_Id`) VALUES
+(7, 77),
+(5, 38),
+(1, 3),
+(7, 45),
+(3, 62),
+(6, 10),
+(2, 23),
+(1, 70),
+(5, 50),
+(3, 13),
+(2, 22),
+(8, 88),
+(1, 72),
+(5, 72),
+(7, 10),
+(1, 49),
+(8, 34),
+(6, 62),
+(5, 69),
+(7, 92),
+(3, 87),
+(3, 61),
+(3, 59),
+(5, 28),
+(1, 56),
+(7, 61),
+(5, 41),
+(7, 91),
+(5, 95),
+(7, 60);
+
 -- --------------------------------------------------------
 
 --
--- table `RECEIPT`
+--  table `RECEIPT`
 --
 
 CREATE TABLE `RECEIPT` (
   `Id` int(8) NOT NULL,
-  `Receipt_Date` date NOT NULL,
-  `Receipt_Time` time NOT NULL,
-  `Item_Description` varchar(80) NOT NULL,
-  `Cinema_address` varchar(50) NOT NULL,
+  `Receipt_Date` varchar(50) NOT NULL,
+  `Receipt_Time` varchar(20) NOT NULL,
+  `Cinema_Id` int(12) NOT NULL,
   `Price` decimal(10,0) NOT NULL,
   `Discout_applied` decimal(10,0) DEFAULT NULL,
   `Customers_Id` int(8) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+--  data for table `RECEIPT`
+--
+
+INSERT INTO `RECEIPT` (`Id`, `Receipt_Date`, `Receipt_Time`, `Cinema_Id`, `Price`, `Discout_applied`, `Customers_Id`) VALUES
+(1, 'Dec 24, 2019', '2.30PM', 8, '25', '5', 105),
+(2, 'Dec 24, 2019', '1PM', 6, '22', '5', 134),
+(3, 'Jan 3, 2020', '2.33PM', 7, '24', '6', 237),
+(4, 'Dec 28, 2019', '6.32PM', 4, '26', '6', 199),
+(5, 'Dec 13, 2019', '5.43PM', 10, '32', '0', 172),
+(6, 'Jan 1, 2020', '3.31PM', 8, '27', '0', 245),
+(7, 'Jan 2, 2020', '5PM', 7, '31', '9', 182),
+(8, 'Dec 24, 2019', '5.05PM', 2, '23', '9', 145),
+(9, 'Jan 1, 2020', '4.05PM', 6, '28', '3', 273),
+(10, 'Dec 11, 2019', '6.59PM', 7, '31', '3', 215),
+(11, 'Dec 23, 2019', ' 10AM', 2, '24', '10', 236),
+(12, 'Dec 25, 2019', ' 11AM', 1, '23', '10', 293),
+(13, 'Jan 6, 2020', ' 11.27AM', 5, '29', '1', 193),
+(14, 'Dec 11, 2019', ' 4.59PM', 8, '21', '1', 124),
+(15, 'Dec 13, 2019', ' 12.01AM', 10, '33', '5', 249),
+(16, 'Jan 5, 2020', ' 3.56PM', 10, '25', '5', 147),
+(17, 'Dec 17, 2019', ' 9.45AM', 7, '28', '6', 192),
+(18, 'Dec 22, 2019', ' 2PM', 1, '32', '6', 219),
+(19, 'Jan 1, 2020', ' 11.47AM', 9, '30', '0', 284),
+(20, 'Dec 27, 2019', ' 8.05PM', 10, '33', '0', 143),
+(21, 'Jan 2, 2020', '3.33PM', 1, '26', '9', 188),
+(22, 'Jan 7, 2020', '4.08PM', 9, '32', '9', 110),
+(23, 'Dec 30, 2019', '3.57PM', 8, '33', '3', 307),
+(24, 'Dec 16, 2019', '6PM', 3, '26', '3', 125),
+(25, 'Dec 17, 2019', '5.07PM', 4, '23', '10', 349),
+(26, 'Dec 18, 2019', '7PM', 5, '26', '10', 126),
+(27, 'Dec 19, 2019', '5.47PM', 1, '31', '1', 222),
+(28, 'Dec 17, 2019', '6.09PM', 2, '23', '1', 119),
+(29, 'Dec 25, 2019', '4.27PM', 1, '33', '5', 221),
+(30, 'Dec 24, 2019', '5.59PM', 8, '30', '5', 118),
+(32, 'Dec 20, 2019', ' AM', 5, '25', '6', 171),
+(33, 'Dec 21, 2019', ' 10.05AM', 7, '32', '0', 117),
+(34, 'Dec 16, 2019', ' 7AM', 3, '30', '0', 113),
+(35, 'Dec 24, 2019', ' 11.47AM', 1, '23', '9', 116),
+(36, 'Dec 19, 2019', ' 11.23AM', 5, '33', '9', 112),
+(37, 'Dec 27, 2019', ' 11.57AM', 3, '27', '3', 115),
+(38, 'Dec 17, 2019', ' 10.56AM', 2, '26', '3', 109),
+(39, 'Jan 2, 2020', ' 9.06AM', 3, '33', '10', 114),
+(40, 'Jan 6, 2020', ' 11.07AM', 1, '27', '10', 170),
+(41, 'Dec 18, 2019', '3.17PM', 3, '32', '1', 223),
+(42, 'Dec 17, 2019', 'PM', 4, '32', '1', 206),
+(43, 'Dec 14, 2019', '3PM', 3, '22', '5', 207),
+(44, 'Dec 12, 2019', '1.09PM', 3, '33', '5', 213),
+(45, 'Jan 1, 2020', '5PM', 2, '29', '6', 208),
+(46, 'Dec 17, 2019', '3.10PM', 6, '32', '6', 214),
+(47, 'Dec 19, 2019', '4PM', 1, '26', '0', 209),
+(48, 'Dec 19, 2019', '4.18PM', 10, '28', '0', 215),
+(49, 'Dec 14, 2019', '1PM', 10, '22', '9', 212),
+(50, 'Dec 13, 2019', '6.34PM', 9, '28', '9', 216),
+(52, 'Jan 3, 2020', ' 12.06AM', 8, '27', '3', 204),
+(53, 'Dec 15, 2019', ' 4.23PM', 7, '33', '10', 202),
+(54, 'Dec 31, 2019', ' 6.06AM', 5, '21', '10', 205),
+(55, 'Dec 31, 2019', ' 7.17PM', 10, '29', '1', 201),
+(56, 'Jan 6, 2020', ' 11.14AM', 6, '24', '1', 200),
+(57, 'Dec 23, 2019', ' 5.05PM', 10, '25', '5', 180),
+(58, 'Jan 7, 2020', ' 11.47AM', 2, '22', '5', 174),
+(59, 'Dec 20, 2019', ' 6PM', 8, '27', '6', 173),
+(60, 'Jan 5, 2020', ' 9.28AM', 7, '31', '6', 172),
+(62, 'Dec 11, 2019', '7.01PM', 3, '30', '0', 157),
+(63, 'Jan 4, 2020', '2.57PM', 1, '27', '9', 331),
+(64, 'Dec 18, 2019', '6.51PM', 9, '31', '9', 337),
+(65, 'Dec 29, 2019', '3PM', 2, '22', '3', 332),
+(66, 'Dec 29, 2019', '3.52PM', 3, '28', '3', 338),
+(67, 'Jan 7, 2020', '4.44PM', 3, '33', '3', 334),
+(68, 'Dec 16, 2019', '4.14PM', 4, '22', '10', 339),
+(69, 'Dec 26, 2019', '3.37PM', 4, '31', '1', 336),
+(70, 'Dec 24, 2019', '4.16PM', 8, '23', '1', 340),
+(71, 'Dec 16, 2019', ' 5.01AM', 9, '28', '5', 342),
+(72, 'Dec 17, 2019', ' AM', 9, '33', '5', 159),
+(73, 'Dec 20, 2019', ' 11.11AM', 9, '23', '6', 341),
+(74, 'Dec 29, 2019', ' 6.06PM', 10, '28', '6', 152),
+(75, 'Jan 2, 2020', ' 11.19AM', 7, '32', '0', 343),
+(76, 'Dec 18, 2019', ' 7.11PM', 6, '22', '0', 153),
+(77, 'Dec 23, 2019', ' 9.19AM', 7, '33', '9', 150),
+(78, 'Dec 15, 2019', ' 11.51AM', 4, '26', '9', 154),
+(79, 'Dec 16, 2019', ' 9.21AM', 10, '28', '3', 151),
+(80, 'Jan 2, 2020', ' 3.02AM', 5, '31', '3', 155);
+
 -- --------------------------------------------------------
 
 --
--- table `SHOWING_ROOM`
+--  table `SHOWING_ROOM`
 --
 
 CREATE TABLE `SHOWING_ROOM` (
   `Id` int(8) NOT NULL,
   `Seats` int(8) NOT NULL,
-  `Screen_Width` decimal(5,2) NOT NULL,
-  `Screen_Length` decimal(5,2) NOT NULL,
-  `Room_Type` varchar(10) DEFAULT NULL,
+  `Screen_Width` varchar(20) NOT NULL,
+  `Screen_Length` varchar(20) NOT NULL,
+  `Room_Type` varchar(100) DEFAULT NULL,
   `Movie_showing_Id` int(8) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- data for table `SHOWING_ROOM`
+--
+
+INSERT INTO `SHOWING_ROOM` (`Id`, `Seats`, `Screen_Width`, `Screen_Length`, `Room_Type`, `Movie_showing_Id`) VALUES
+(1000, 90, '45', '30', 'Movie Theatre', NULL),
+(1001, 136, '55', '30', 'Movie Theatre', NULL),
+(1002, 126, '55', '30', 'Movie Theatre', NULL),
+(1003, 100, '45', '30', 'Movie Theatre_VIP', NULL),
+(1004, 80, '45', '30', 'Movie Theatre', NULL),
+(1005, 130, '55', '30', 'Movie Theatre', NULL),
+(1006, 140, '45', '30', 'Movie Theatre_VIP', NULL),
+(1007, 143, '55', '30', 'Movie Theatre', NULL),
+(1008, 140, '55', '30', 'Movie Theatre', NULL);
 
 -- --------------------------------------------------------
 
 --
--- table `TICKET`
+--  table `TICKET`
 --
 
 CREATE TABLE `TICKET` (
   `Id` int(8) NOT NULL,
-  `Show_Date` date NOT NULL,
-  `Show_Time` time NOT NULL,
+  `Show_Date` varchar(100) NOT NULL,
+  `Show_Time` varchar(10) NOT NULL,
   `Quantity` int(8) NOT NULL,
   `Admin_Id` int(8) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Indexes for dumped tables
+-- data for table `TICKET`
+--
+
+INSERT INTO `TICKET` (`Id`, `Show_Date`, `Show_Time`, `Quantity`, `Admin_Id`) VALUES
+(1, 'Jan 14, 2020', '6PM', 2, 106),
+(2, 'Feb 20, 2020', '6PM', 3, 119),
+(3, 'Mar 16, 2020', '6PM', 2, 155),
+(4, 'Feb 9, 2020', '6PM', 1, 155),
+(5, 'Jan 21, 2020', '6PM', 1, 112),
+(6, 'Feb 27, 2020', '6PM', 4, 121),
+(7, 'Feb 18, 2020', '6PM', 1, 147),
+(8, 'Jan 22, 2020', '6PM', 1, 118),
+(9, 'Mar 2, 2020', '6PM', 1, 116),
+(10, 'Jan 21, 2020', '6PM', 3, 139),
+(11, 'Feb 20, 2020', '8PM', 2, 126),
+(12, 'Jan 8, 2020', '8PM', 1, 138),
+(13, 'Jan 10, 2020', '8PM', 2, 120),
+(14, 'Feb 4, 2020', '8PM', 2, 145),
+(15, 'Jan 7, 2020', '8PM', 4, 110),
+(16, 'Jan 29, 2020', '8PM', 4, 124),
+(17, 'Jan 26, 2020', '8PM', 2, 120),
+(18, 'Feb 12, 2020', '8PM', 4, 100),
+(19, 'Feb 20, 2020', '8PM', 3, 156),
+(20, 'Feb 7, 2020', '8PM', 4, 138),
+(21, 'Feb 23, 2020', '10PM', 2, 102),
+(22, 'Jan 22, 2020', '10PM', 2, 121),
+(23, 'Feb 12, 2020', '10PM', 1, 154),
+(24, 'Jan 23, 2020', '10PM', 3, 158),
+(25, 'Mar 3, 2020', '10PM', 1, 156),
+(26, 'Feb 13, 2020', '10PM', 4, 157),
+(27, 'Jan 22, 2020', '10PM', 4, 148),
+(28, 'Jan 28, 2020', '10PM', 4, 121),
+(29, 'Jan 21, 2020', '10PM', 2, 110),
+(30, 'Feb 8, 2020', '10PM', 4, 145),
+(31, 'Feb 23, 2020', '11PM', 3, 151),
+(32, 'Jan 12, 2020', '11PM', 1, 146),
+(33, 'Mar 7, 2020', '11PM', 2, 134),
+(34, 'Feb 8, 2020', '11PM', 3, 139),
+(35, 'Feb 10, 2020', '11PM', 3, 152),
+(36, 'Mar 17, 2020', '11PM', 4, 153),
+(37, 'Feb 10, 2020', '11PM', 3, 126),
+(38, 'Mar 5, 2020', '11PM', 3, 158),
+(39, 'Feb 28, 2020', '11PM', 2, 140),
+(40, 'Jan 12, 2020', '11PM', 2, 135),
+(41, 'Jan 26, 2020', '6PM', 2, 105),
+(42, 'Feb 6, 2020', '6PM', 3, 107),
+(43, 'Mar 17, 2020', '6PM', 1, 148),
+(44, 'Feb 24, 2020', '6PM', 2, 119),
+(45, 'Mar 16, 2020', '6PM', 4, 121),
+(46, 'Feb 21, 2020', '6PM', 3, 111),
+(47, 'Feb 20, 2020', '6PM', 2, 107),
+(48, 'Mar 6, 2020', '6PM', 1, 119),
+(49, 'Feb 20, 2020', '6PM', 4, 143),
+(50, 'Feb 25, 2020', '6PM', 3, 132),
+(51, 'Feb 5, 2020', '8PM', 2, 129),
+(52, 'Mar 14, 2020', '8PM', 2, 107),
+(53, 'Feb 4, 2020', '8PM', 1, 136),
+(54, 'Mar 7, 2020', '8PM', 3, 151),
+(55, 'Feb 16, 2020', '8PM', 4, 112),
+(56, 'Jan 30, 2020', '8PM', 4, 147),
+(57, 'Jan 30, 2020', '8PM', 1, 121),
+(58, 'Jan 16, 2020', '8PM', 2, 126),
+(59, 'Feb 24, 2020', '8PM', 1, 132),
+(60, 'Feb 11, 2020', '8PM', 3, 129),
+(61, 'Feb 26, 2020', '10PM', 2, 130),
+(62, 'Mar 11, 2020', '10PM', 4, 108),
+(63, 'Jan 10, 2020', '10PM', 3, 158),
+(64, 'Mar 17, 2020', '10PM', 3, 130),
+(65, 'Mar 11, 2020', '10PM', 2, 105),
+(66, 'Feb 21, 2020', '10PM', 1, 105),
+(67, 'Jan 17, 2020', '10PM', 2, 102),
+(68, 'Mar 1, 2020', '10PM', 2, 116),
+(69, 'Mar 2, 2020', '10PM', 4, 145),
+(70, 'Jan 26, 2020', '10PM', 4, 155),
+(71, 'Jan 28, 2020', '11PM', 2, 115),
+(72, 'Mar 14, 2020', '11PM', 2, 154),
+(73, 'Jan 16, 2020', '11PM', 4, 128),
+(74, 'Feb 6, 2020', '11PM', 4, 141),
+(75, 'Feb 8, 2020', '11PM', 3, 103),
+(76, 'Mar 10, 2020', '11PM', 3, 145),
+(77, 'Jan 18, 2020', '11PM', 1, 108),
+(78, 'Jan 13, 2020', '11PM', 2, 123),
+(79, 'Mar 17, 2020', '11PM', 3, 148),
+(80, 'Feb 25, 2020', '11PM', 4, 113),
+(81, 'Feb 2, 2020', '6PM', 4, 101),
+(82, 'Mar 7, 2020', '6PM', 3, 106),
+(83, 'Mar 16, 2020', '6PM', 1, 148),
+(84, 'Mar 13, 2020', '6PM', 3, 112),
+(85, 'Jan 20, 2020', '6PM', 4, 127),
+(86, 'Feb 20, 2020', '6PM', 4, 157),
+(87, 'Jan 26, 2020', '6PM', 2, 130),
+(88, 'Mar 16, 2020', '6PM', 1, 128),
+(89, 'Mar 4, 2020', '6PM', 2, 147),
+(90, 'Feb 10, 2020', '6PM', 1, 120),
+(91, 'Jan 31, 2020', '8PM', 1, 104),
+(92, 'Mar 15, 2020', '8PM', 4, 150),
+(93, 'Jan 8, 2020', '8PM', 4, 122),
+(94, 'Mar 9, 2020', '8PM', 4, 124),
+(95, 'Jan 19, 2020', '8PM', 2, 112),
+(96, 'Jan 12, 2020', '8PM', 4, 152),
+(97, 'Jan 15, 2020', '8PM', 3, 139),
+(98, 'Jan 29, 2020', '8PM', 2, 114),
+(99, 'Jan 17, 2020', '8PM', 3, 131),
+(100, 'Feb 7, 2020', '8PM', 2, 159);
+
+--
+-- Indexes for tables
 --
 
 --
@@ -811,37 +1349,37 @@ ALTER TABLE `GENRE`
 -- AUTO_INCREMENT for table `MEMBERSHIP`
 --
 ALTER TABLE `MEMBERSHIP`
-  MODIFY `Id` int(8) NOT NULL AUTO_INCREMENT;
+  MODIFY `Id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
 
 --
 -- AUTO_INCREMENT for table `MOVIE`
 --
 ALTER TABLE `MOVIE`
-  MODIFY `Id` int(8) NOT NULL AUTO_INCREMENT;
+  MODIFY `Id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `MOVIE_RATINGS`
 --
 ALTER TABLE `MOVIE_RATINGS`
-  MODIFY `Id` int(8) NOT NULL AUTO_INCREMENT;
+  MODIFY `Id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `MOVIE_SHOWING`
 --
 ALTER TABLE `MOVIE_SHOWING`
-  MODIFY `Id` int(8) NOT NULL AUTO_INCREMENT;
+  MODIFY `Id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `MOVIE_SUPPLIER`
 --
 ALTER TABLE `MOVIE_SUPPLIER`
-  MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `Id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `SHOWING_ROOM`
 --
 ALTER TABLE `SHOWING_ROOM`
-  MODIFY `Id` int(8) NOT NULL AUTO_INCREMENT;
+  MODIFY `Id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1009;
 
 --
 -- Constraints for dumped tables
