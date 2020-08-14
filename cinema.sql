@@ -1,5 +1,31 @@
+-- phpMyAdmin SQL Dump
+-- version 4.9.2
+-- https://www.phpmyadmin.net/
+--
+-- Host: localhost
+-- Generation Time: Aug 14, 2020 at 11:01 PM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.4.1
 
---  table `ADMIN`
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `cinema`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `ADMIN`
 --
 
 CREATE TABLE `ADMIN` (
@@ -12,7 +38,7 @@ CREATE TABLE `ADMIN` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- data for table `ADMIN`
+-- Dumping data for table `ADMIN`
 --
 
 INSERT INTO `ADMIN` (`Id`, `Password`, `First`, `Last`, `Age`, `Position`) VALUES
@@ -109,7 +135,7 @@ INSERT INTO `CINEMA` (`Id`, `Name`, `Address`, `Phone_Number`) VALUES
 -- --------------------------------------------------------
 
 --
---  table `CUSTOMER`
+-- Table structure for table `CUSTOMER`
 --
 
 CREATE TABLE `CUSTOMER` (
@@ -117,319 +143,320 @@ CREATE TABLE `CUSTOMER` (
   `Phone_number` varchar(20) DEFAULT NULL,
   `Email` varchar(320) DEFAULT NULL,
   `Payment_Method` varchar(30) NOT NULL,
-  `Card_number` varchar(20) NOT NULL
+  `Card_number` varchar(20) NOT NULL,
+  `Membership_Id` int(8) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
---  data for table `CUSTOMER`
+-- Dumping data for table `CUSTOMER`
 --
 
-INSERT INTO `CUSTOMER` (`Id`, `Phone_number`, `Email`, `Payment_Method`, `Card_number`) VALUES
-(100, '18114955966', 'enim@arcu.com', 'Visa', '4532260272110262'),
-(101, '16834646087', 'Etiam@convallisconvallisdolor.net', 'Visa', '4469271211028868'),
-(102, '15689988251', 'congue.a@cubilia.com', 'Visa', '4916 271 87 4540'),
-(103, '15355204219', 'sed@Morbivehicula.edu', 'Visa', '4556989470759'),
-(104, '15542297633', 'Lorem.ipsum.dolor@Aliquameratvolutpat.edu', 'Visa', '4485994251550'),
-(105, '12477195600', 'consectetuer.ipsum.nunc@Pellentesquetincidunt.ca', 'Visa', '4532129966808'),
-(106, '11085642376', 'non.sollicitudin.a@risusDonecnibh.com', 'Visa', '4556 4406 3298 4348'),
-(107, '13042967179', 'eu@maurisblanditmattis.com', 'Visa', '448 53219 73839 729'),
-(108, '13258199215', 'blandit.viverra.Donec@magnatellusfaucibus.net', 'Visa', '4485744173591'),
-(109, '16673450238', 'gravida@Integer.net', 'Visa', '4716898655763'),
-(110, '19585817295', 'orci.adipiscing.non@vitaeposuere.co.uk', 'Debit', '4929393323635'),
-(111, '13164869655', 'suscipit.nonummy.Fusce@sitamet.ca', 'Debit', '4716864420978'),
-(112, '18828465984', 'Morbi.non@Suspendisse.net', 'Debit', '4929324093984'),
-(113, '17321740110', 'et@diamdictum.edu', 'Debit', '4024007120641'),
-(114, '11939006102', 'diam@vitae.co.uk', 'Debit', '4384674297787'),
-(115, '11487936148', 'mauris.elit@dignissimtempor.com', 'Debit', '491661 101873 4219'),
-(116, '14323319625', 'tincidunt@acmetusvitae.edu', 'Debit', '4716942133871152'),
-(117, '17675279162', 'luctus.Curabitur@egetmassa.co.uk', 'Debit', '4916845817595'),
-(118, '18582122602', 'Cras.convallis@faucibus.net', 'Debit', '471650 914610 7963'),
-(119, '13092701160', 'felis.purus.ac@iderat.net', 'Debit', '4601 6375 6933 5668'),
-(120, '18039672437', 'nulla.Integer.vulputate@magna.co.uk', 'Visa', '4716931640728286'),
-(121, '11018355544', 'libero.Proin@mollisDuissit.org', 'Visa', '4556102051980427'),
-(122, '15503961879', 'feugiat.non@non.org', 'Visa', '4539848926294'),
-(123, '11004266749', 'felis.Nulla.tempor@Quisque.ca', 'Visa', '4716006393224'),
-(124, '17342620243', 'Aenean@Donec.ca', 'Visa', '4716403220120565'),
-(125, '11884476608', 'semper.rutrum.Fusce@Proinsedturpis.com', 'Visa', '4716141820570298'),
-(126, '12837031239', 'erat@Aeneanegestas.ca', 'Visa', '4716603063071870'),
-(127, '15188999046', 'tristique.aliquet@ullamcorpernislarcu.co.uk', 'Visa', '4716737591019470'),
-(128, '14386252691', 'Cras.eu.tellus@iaculislacus.org', 'Visa', '4556 714 31 5543'),
-(129, '14979554669', 'felis@auctorveliteget.co.uk', 'Visa', '471624 962786 4333'),
-(130, '15563860747', 'et.magnis.dis@atauctorullamcorper.com', 'Debit', '4485784311224708'),
-(131, '15506145210', 'commodo.at.libero@Phaselluslibero.ca', 'Debit', '4024007130780'),
-(132, '13449184680', 'odio@augueut.co.uk', 'Debit', '4929821894371'),
-(133, '11374995785', 'facilisis.magna.tellus@Sed.net', 'Debit', '492909 2511695824'),
-(134, '12314619297', 'semper.erat.in@Nullamvelit.ca', 'Debit', '455601 458362 7600'),
-(135, '17989769233', 'ut.pellentesque@NullafacilisisSuspendisse.co.uk', 'Debit', '4916070689230'),
-(136, '17467530583', 'blandit@montesnasceturridiculus.org', 'Debit', '4024007198262882'),
-(137, '17889806364', 'enim.condimentum.eget@vulputate.co.uk', 'Debit', '4929409902109'),
-(138, '15063328531', 'Nulla@tellusSuspendissesed.ca', 'Debit', '4929787078662'),
-(139, '14396573915', 'non@imperdiet.edu', 'Debit', '4485 4696 5379 3458'),
-(140, '19374362220', 'dolor@nonmagnaNam.ca', 'Visa', '453 26775 20371 422'),
-(141, '13015268641', 'quis.turpis.vitae@Maecenas.org', 'Visa', '4929 5801 9463 6818'),
-(142, '13589476442', 'Nunc@diamDuis.co.uk', 'Visa', '453 20408 70846 164'),
-(143, '19946028175', 'Pellentesque.habitant.morbi@Quisquefringilla.net', 'Visa', '4916054240364'),
-(144, '17326642223', 'amet@variusultrices.ca', 'Visa', '4916 5767 8631 2219'),
-(145, '17073603586', 'vitae.odio.sagittis@ac.net', 'Visa', '4485613243517'),
-(146, '13795861645', 'volutpat.Nulla@ultricesDuis.co.uk', 'Visa', '4485040596172'),
-(147, '14548788306', 'in@Innecorci.org', 'Visa', '4985589461951'),
-(148, '15819653255', 'blandit@eratin.org', 'Visa', '4113666320392'),
-(149, '16884902483', 'neque.et.nunc@Namnullamagna.com', 'Visa', '4556 807 05 0114'),
-(150, '13729142647', 'luctus.ut.pellentesque@ante.co.uk', 'Debit', '4716 3746 4357 1728'),
-(151, '16541983917', 'amet@anteipsumprimis.net', 'Debit', '4539487294319'),
-(152, '18389995867', 'ut.lacus.Nulla@commodoatlibero.com', 'Debit', '491 62820 90472 506'),
-(153, '19206054274', 'eget.laoreet.posuere@egetipsumDonec.org', 'Debit', '4716 037 75 3974'),
-(154, '16276743949', 'magnis.dis.parturient@Duisa.ca', 'Debit', '4539690495034'),
-(155, '16746751840', 'libero.Proin@congueturpis.com', 'Debit', '4539 995 53 1087'),
-(156, '14153158708', 'et.ultrices.posuere@turpisnonenim.ca', 'Debit', '4024007168590'),
-(157, '17674452260', 'Quisque.purus.sapien@duisemper.com', 'Debit', '4024 0071 8692 2299'),
-(158, '11241535590', 'Vivamus@erat.com', 'Debit', '4929720964473'),
-(159, '11679479295', 'rhoncus.Nullam.velit@condimentumDonecat.org', 'Debit', '492 96618 66880 627'),
-(160, '18704042219', 'ac@inhendrerit.com', 'Visa', '4916 352 12 5804'),
-(161, '13333661401', 'urna.et@urna.edu', 'Visa', '4916 630 34 3518'),
-(162, '13181218833', 'Integer.sem.elit@lacus.edu', 'Visa', '453247 3288991258'),
-(163, '18809598903', 'vel@eleifend.edu', 'Visa', '4485296855346714'),
-(164, '14305929241', 'euismod@Vestibulumaccumsan.net', 'Visa', '4539367014827468'),
-(165, '12804733679', 'Morbi.neque.tellus@dis.edu', 'Visa', '4556739879085'),
-(166, '19421443452', 'risus.Nunc.ac@nec.org', 'Visa', '4716913730534'),
-(167, '19701522798', 'sem@duinectempus.edu', 'Visa', '4929180377471'),
-(168, '16546851868', 'massa@magnisdisparturient.org', 'Visa', '4532 9700 4887 3239'),
-(169, '16757707709', 'Nulla.dignissim@sitametconsectetuer.co.uk', 'Visa', '492919 8286871365'),
-(170, '12737190644', 'Proin.mi@nonante.ca', 'Debit', '4929170497601741'),
-(171, '13786330831', 'Cras.sed.leo@congueelitsed.com', 'Debit', '4532 8826 0374 9599'),
-(172, '12671022650', 'at.pretium.aliquet@ornaresagittis.ca', 'Debit', '425715 099385 1000'),
-(173, '17031997888', 'sed.dictum.eleifend@lobortis.com', 'Debit', '4556006625500'),
-(174, '16234018211', 'pellentesque.Sed.dictum@placerat.edu', 'Debit', '4916153015534318'),
-(175, '18733851902', 'non.egestas@accumsanneque.ca', 'Debit', '4716674382490513'),
-(176, '16018898951', 'Suspendisse@etnunc.org', 'Debit', '4916 8351 8899 3855'),
-(177, '13548566792', 'convallis.ligula@sed.ca', 'Debit', '4916850737068'),
-(178, '13906510703', 'felis.adipiscing@nuncsed.net', 'Debit', '4556752330438'),
-(179, '14035026554', 'eget.venenatis.a@inmolestietortor.co.uk', 'Debit', '4998466259228665'),
-(180, '14217809524', 'luctus.felis.purus@loremut.edu', 'Visa', '4916953952762'),
-(181, '17223220008', 'leo.Morbi.neque@vel.com', 'Visa', '491685 4272108064'),
-(182, '13897587036', 'sociis.natoque.penatibus@atortor.com', 'Visa', '4532462404359'),
-(183, '18028837616', 'erat@Duismi.com', 'Visa', '492 74517 24669 434'),
-(184, '16429943604', 'leo.Vivamus.nibh@turpis.edu', 'Visa', '4556193185722'),
-(185, '18819788373', 'Etiam.vestibulum.massa@etmagnis.edu', 'Visa', '4556360744023639'),
-(186, '15355541586', 'sit.amet@Utnecurna.org', 'Visa', '4929869266573'),
-(187, '15454475135', 'ac.ipsum@etliberoProin.ca', 'Visa', '4556738824439'),
-(188, '14968313379', 'natoque@blanditviverraDonec.net', 'Visa', '402400 718398 9200'),
-(189, '12377812583', 'arcu@pedeacurna.edu', 'Visa', '4485 864 93 6108'),
-(190, '14421271546', 'enim.gravida.sit@felispurusac.co.uk', 'Debit', '4335329335596'),
-(191, '19416398410', 'non.lorem@sapienmolestieorci.com', 'Debit', '4539366770454'),
-(192, '19389235014', 'mattis.semper@tristique.edu', 'Debit', '4490950920230'),
-(193, '12732883026', 'vel.arcu.Curabitur@sollicitudinorci.net', 'Debit', '4539947169499'),
-(194, '13453761090', 'felis@Aliquamvulputate.net', 'Debit', '4024007133503'),
-(195, '19064768640', 'Nulla.interdum@Aliquamultrices.ca', 'Debit', '4916548679789'),
-(196, '13323838413', 'aliquam@varius.net', 'Debit', '4485 828 47 1044'),
-(197, '15804980919', 'Nam@egestas.co.uk', 'Debit', '455680 2547700145'),
-(198, '12333383081', 'Nulla.semper.tellus@Sedneque.ca', 'Debit', '404189 1654084552'),
-(199, '15729392301', 'lectus.ante.dictum@Duiselementum.com', 'Debit', '4735024041177050'),
-(200, '19343124095', 'vulputate@ultricesVivamusrhoncus.edu', 'Visa', '471675 642305 9884'),
-(201, '15031155737', 'risus@antebibendumullamcorper.co.uk', 'Visa', '4716 813 04 0133'),
-(202, '13796416662', 'arcu@actellusSuspendisse.co.uk', 'Visa', '4532967761675'),
-(203, '17535437811', 'augue.Sed@gravida.co.uk', 'Visa', '4247909078459598'),
-(204, '15083250596', 'tincidunt.tempus.risus@convalliserat.com', 'Visa', '4485508933578'),
-(205, '11572189456', 'non.dui.nec@vitaeerat.net', 'Visa', '4024007156314'),
-(206, '11974793198', 'Maecenas.malesuada@adipiscingMaurismolestie.net', 'Visa', '4024 0071 7784 1045'),
-(207, '16029612469', 'aliquam.adipiscing.lacus@tinciduntDonecvitae.org', 'Visa', '4916665761980'),
-(208, '16954055977', 'Fusce@sodales.ca', 'Visa', '4793070733304'),
-(209, '11921756245', 'enim.sit@Seddiam.org', 'Visa', '4929288539733'),
-(210, '14293697990', 'iaculis@ascelerisque.co.uk', 'Debit', '453950 1481766664'),
-(211, '18852847104', 'tincidunt.dui.augue@magnaet.ca', 'Debit', '4556225191573'),
-(212, '11777575346', 'tristique@Nulla.edu', 'Debit', '4539859396809'),
-(213, '18994255301', 'arcu@accumsanlaoreetipsum.com', 'Debit', '4916853772260'),
-(214, '15377573013', 'Phasellus.fermentum.convallis@duiquis.com', 'Debit', '4695953195888336'),
-(215, '14552021133', 'metus.urna@orcitincidunt.co.uk', 'Debit', '496245 448760 6128'),
-(216, '11064298152', 'velit@Innec.co.uk', 'Debit', '4556392785702'),
-(217, '17453143707', 'ultrices.iaculis.odio@dui.net', 'Debit', '4024007138668'),
-(218, '19146265079', 'In.nec.orci@Maecenas.ca', 'Debit', '453295 7974296873'),
-(219, '19036518747', 'aliquet.nec@nisl.net', 'Debit', '4556298643658'),
-(220, '13278213428', 'pede@Nullamvelitdui.edu', 'Visa', '4929729633111'),
-(221, '13664194573', 'ante@velitegetlaoreet.com', 'Visa', '4485412222944'),
-(222, '11812080357', 'Nulla.interdum@nuncacmattis.edu', 'Visa', '4556261935099'),
-(223, '17077773551', 'ipsum.Suspendisse@massarutrummagna.co.uk', 'Visa', '471 65954 49404 140'),
-(224, '17386586515', 'erat@elitfermentum.net', 'Visa', '491696 122188 1160'),
-(225, '12489474002', 'quam.Pellentesque@nectellus.net', 'Visa', '455 63510 03350 193'),
-(226, '12022953924', 'tincidunt.Donec@lectusquis.edu', 'Visa', '4083093333385'),
-(227, '18408422834', 'rhoncus.Donec.est@Cras.edu', 'Visa', '4556323304896'),
-(228, '19795331720', 'Cras.eget.nisi@ante.org', 'Visa', '4539 600 97 5737'),
-(229, '19576720916', 'dictum.ultricies@magnaPraesent.co.uk', 'Visa', '448 55986 34172 877'),
-(230, '16089361444', 'elit@nuncnullavulputate.co.uk', 'Debit', '4556709499930'),
-(231, '16408068886', 'sem@habitantmorbitristique.net', 'Debit', '4929676592690'),
-(232, '14775602716', 'eu.neque@sedfacilisisvitae.org', 'Debit', '4485 1914 2791 7144'),
-(233, '17879015194', 'Nunc.sollicitudin.commodo@tacitisociosquad.co.uk', 'Debit', '4556953714893'),
-(234, '11477804101', 'sagittis.felis.Donec@dignissimlacusAliquam.edu', 'Debit', '4024 007 13 3909'),
-(235, '12945177123', 'et@ametconsectetuer.ca', 'Debit', '4485673390224'),
-(236, '13107543837', 'dictum.placerat.augue@quisaccumsanconvallis.co.uk', 'Debit', '448593 924801 2770'),
-(237, '17877484434', 'odio.vel.est@sagittis.net', 'Debit', '4208313667121999'),
-(238, '16945217130', 'turpis.Aliquam@sodalesMaurisblandit.co.uk', 'Debit', '4716955908360'),
-(239, '17254459348', 'libero.est@vehiculaaliquetlibero.com', 'Debit', '448 58906 09575 428'),
-(240, '12368744797', 'lorem.sit@ipsumdolorsit.org', 'Visa', '4916977086750084'),
-(241, '13222812658', 'Praesent.eu.dui@iaculisodioNam.net', 'Visa', '453928 085688 6510'),
-(242, '16581114396', 'rhoncus@odiosagittis.org', 'Visa', '4916783272126'),
-(243, '14523241530', 'Quisque@Proin.com', 'Visa', '4716 0083 6750 2309'),
-(244, '16684253537', 'orci.Ut@tinciduntvehicularisus.edu', 'Visa', '4556036651997'),
-(245, '15604711807', 'augue.porttitor@nullamagnamalesuada.ca', 'Visa', '4539939564921196'),
-(246, '18706721866', 'eu@consequatnec.co.uk', 'Visa', '4929776355360'),
-(247, '12826944832', 'gravida.molestie.arcu@molestieSed.edu', 'Visa', '4485437165099953'),
-(248, '14425844765', 'tincidunt.dui.augue@laoreetposuere.org', 'Visa', '4556 526 09 4914'),
-(249, '16167871532', 'molestie@condimentumeget.org', 'Visa', '402400 711727 7037'),
-(250, '17286682581', 'quis.accumsan@enimmi.edu', 'Debit', '4916067046790'),
-(251, '14265352314', 'dis.parturient.montes@Suspendisse.co.uk', 'Debit', '4532495432476'),
-(252, '14734591994', 'id.sapien@sitamet.co.uk', 'Debit', '4024007198977'),
-(253, '17627695667', 'amet@morbi.net', 'Debit', '4024007171719'),
-(254, '18385504292', 'ultrices.sit.amet@lorem.net', 'Debit', '471601 772305 9466'),
-(255, '15699278884', 'mollis.Duis@erat.net', 'Debit', '4024007113764996'),
-(256, '13098579425', 'vitae.purus@lobortis.com', 'Debit', '4929520598467170'),
-(257, '16672745807', 'vitae@nislelementum.edu', 'Debit', '448575 196759 8503'),
-(258, '19027997592', 'ac.sem@utcursus.ca', 'Debit', '471 66462 99631 322'),
-(259, '16621922627', 'felis.ullamcorper.viverra@consequatlectussit.org', 'Debit', '4024007167162'),
-(260, '14798599471', 'sem.mollis@ridiculus.org', 'Visa', '4443886754421'),
-(261, '12856897206', 'ut@idrisusquis.edu', 'Visa', '4485479539221533'),
-(262, '16714024477', 'vestibulum@Donec.co.uk', 'Visa', '4556593066217'),
-(263, '18055058164', 'mollis.Phasellus.libero@tinciduntdui.co.uk', 'Visa', '4532893697670'),
-(264, '19207338639', 'tempor.augue.ac@orcitincidunt.net', 'Visa', '4556558801384'),
-(265, '17138162040', 'sociis@egestasAliquam.org', 'Visa', '4916 464 03 2815'),
-(266, '15393257399', 'gravida.molestie.arcu@risusDonec.co.uk', 'Visa', '4556 274 72 3482'),
-(267, '12184237411', 'non@nonummyipsum.co.uk', 'Visa', '4556605631891'),
-(268, '17097103089', 'mus.Donec.dignissim@nuncullamcorpereu.net', 'Visa', '4556557874738171'),
-(269, '17082641474', 'amet@facilisisSuspendissecommodo.edu', 'Visa', '4166853049663309'),
-(270, '11473892244', 'vitae@dolorvitaedolor.net', 'Debit', '4539490306471157'),
-(271, '17766286402', 'tempus.risus.Donec@imperdietornareIn.co.uk', 'Debit', '4556770132389949'),
-(272, '16745892714', 'ac.urna@vulputateduinec.co.uk', 'Debit', '492 99286 93864 912'),
-(273, '12374320402', 'amet@eu.co.uk', 'Debit', '4556855519202425'),
-(274, '19937309810', 'magna.nec@nibh.co.uk', 'Debit', '4916076288269231'),
-(275, '17493369992', 'fringilla.est.Mauris@diamSed.net', 'Debit', '4024007163807'),
-(276, '13125356880', 'sit@diamdictum.net', 'Debit', '491662 494904 6389'),
-(277, '13058226415', 'commodo.auctor.velit@liberolacusvarius.net', 'Debit', '4221885732899'),
-(278, '14664865162', 'odio@odiosempercursus.ca', 'Debit', '4556032378965134'),
-(279, '17816004785', 'faucibus.orci.luctus@netusetmalesuada.edu', 'Debit', '4556206486190'),
-(280, '14179309217', 'mauris.ut@Nuncsedorci.co.uk', 'Visa', '4485053631269623'),
-(281, '18789022261', 'ut.ipsum.ac@euismodurnaNullam.org', 'Visa', '4716061292477'),
-(282, '15813771101', 'Nam.nulla.magna@accumsaninterdum.net', 'Visa', '4024007183003'),
-(283, '14154824457', 'vestibulum@Maurisnulla.ca', 'Visa', '4716093257753'),
-(284, '11618396687', 'urna.Nullam.lobortis@a.org', 'Visa', '4556 520 70 0904'),
-(285, '12105329919', 'dictum.eu@anteMaecenasmi.net', 'Visa', '4929 957 16 1165'),
-(286, '12707711286', 'magna.Phasellus.dolor@egestasa.org', 'Visa', '4485441496519'),
-(287, '15558681177', 'sit.amet.consectetuer@purussapiengravida.ca', 'Visa', '471602 778496 1773'),
-(288, '17272894682', 'quis.diam.Pellentesque@euerat.co.uk', 'Visa', '4556491060437'),
-(289, '14771163191', 'mattis@quis.edu', 'Visa', '4024007173764'),
-(290, '18339403738', 'vitae.sodales.at@velitinaliquet.co.uk', 'Debit', '491673 7471760514'),
-(291, '12553324790', 'eleifend.non.dapibus@atpede.net', 'Debit', '4539330912121434'),
-(292, '18428985865', 'egestas@arcu.com', 'Debit', '492941 0630501956'),
-(293, '11417465112', 'ornare.placerat.orci@eros.com', 'Debit', '4935925637079'),
-(294, '16619127227', 'lorem.sit@vestibulumlorem.org', 'Debit', '4864095973504'),
-(295, '13697573144', 'in.cursus@velitegetlaoreet.net', 'Debit', '4024 007 14 0631'),
-(296, '17092200439', 'vehicula.aliquet.libero@maurisrhoncus.net', 'Debit', '4024007165873356'),
-(297, '15912550001', 'consequat.dolor.vitae@Nam.ca', 'Debit', '4716960569942'),
-(298, '14654719750', 'dolor.Donec.fringilla@musProinvel.co.uk', 'Debit', '453 21471 52998 777'),
-(299, '13047444831', 'eget@necmollis.net', 'Debit', '4561745873239'),
-(300, '11281458210', 'adipiscing.enim@est.ca', 'Visa', '4916708666923'),
-(301, '13023497647', 'varius@maurissapiencursus.com', 'Visa', '4556 184 76 8460'),
-(302, '14219337060', 'Sed.nunc@magna.net', 'Visa', '4027671951670'),
-(303, '19113672763', 'et.magnis@Phasellusfermentumconvallis.net', 'Visa', '471 60451 31244 347'),
-(304, '12982937997', 'vulputate.risus@Ut.com', 'Visa', '4539068366359437'),
-(305, '15679269314', 'Aenean.massa.Integer@accumsansed.org', 'Visa', '4929745775656'),
-(306, '11937379312', 'mauris@luctusCurabituregestas.org', 'Visa', '4024007163575'),
-(307, '13952659049', 'et.malesuada.fames@rutrumjustoPraesent.edu', 'Visa', '4916275214657200'),
-(308, '12323124538', 'egestas.Duis@fringillacursus.net', 'Visa', '4485 052 70 9697'),
-(309, '15078120695', 'eu.dui.Cum@dictumProin.edu', 'Visa', '4687662620541'),
-(310, '19756112402', 'feugiat.metus@Nuncmauriselit.edu', 'Debit', '448 52816 66443 793'),
-(311, '17314755704', 'libero@vitaediamProin.org', 'Debit', '4024 0071 7440 4334'),
-(312, '19041320799', 'Ut@leo.net', 'Debit', '4916012438520603'),
-(313, '11708429062', 'sollicitudin.a@risusquis.ca', 'Debit', '4556341574066'),
-(314, '17685424421', 'eget@inconsequat.ca', 'Debit', '4716865615998'),
-(315, '19908535566', 'adipiscing@taciti.net', 'Debit', '4311 931 02 8325'),
-(316, '11615287461', 'non.lorem.vitae@ipsumCurabiturconsequat.edu', 'Debit', '4539145037209'),
-(317, '11095547824', 'ullamcorper.Duis.cursus@molestiedapibusligula.net', 'Debit', '4916268607317'),
-(318, '19093261816', 'ultrices.iaculis.odio@lacinia.com', 'Debit', '4716940246747012'),
-(319, '19793467919', 'venenatis@ornarelectusante.org', 'Debit', '4532558719553'),
-(320, '11714139988', 'eu.sem.Pellentesque@sollicitudin.edu', 'Visa', '4929219965445337'),
-(321, '13443692709', 'quam@pellentesque.edu', 'Visa', '4929652937398'),
-(322, '15341724802', 'parturient.montes.nascetur@nonummy.ca', 'Visa', '4024007112599732'),
-(323, '15818030376', 'consequat.nec.mollis@arcu.org', 'Visa', '4485285276844456'),
-(324, '13861718796', 'justo.sit.amet@Quisquelibero.edu', 'Visa', '4916928345566654'),
-(325, '14793426092', 'velit.eget@ante.edu', 'Visa', '4916391840716557'),
-(326, '17559365809', 'nec.enim@eratSednunc.com', 'Visa', '4556273372422231'),
-(327, '18016509245', 'metus.Aenean.sed@liberodui.co.uk', 'Visa', '4716139479451984'),
-(328, '15964389395', 'Curae.Donec.tincidunt@magna.ca', 'Visa', '4716 087 49 7332'),
-(329, '19678078310', 'semper.rutrum.Fusce@lacuspedesagittis.ca', 'Visa', '4556183823977'),
-(330, '12648081537', 'ac@egetmassa.com', 'Debit', '4539299755481'),
-(331, '18484054714', 'sit@Integeraliquamadipiscing.net', 'Debit', '448550 797337 2238'),
-(332, '11808360257', 'a.facilisis@euenim.com', 'Debit', '448550 8590264931'),
-(333, '15496450170', 'vitae.erat@tempusloremfringilla.ca', 'Debit', '492920 8371425223'),
-(334, '12522983860', 'fringilla@ornaresagittisfelis.net', 'Debit', '4198 892 08 1033'),
-(335, '15583931002', 'aliquet.diam@urnaVivamusmolestie.co.uk', 'Debit', '4539 6745 8421 2371'),
-(336, '18728702519', 'at@semelitpharetra.co.uk', 'Debit', '471651 5590412650'),
-(337, '15524606187', 'lacinia.mattis@pede.ca', 'Debit', '4916115055342605'),
-(338, '15686578752', 'tempus@utodio.org', 'Debit', '4916156815553354'),
-(339, '18605716850', 'non.lobortis@Phasellusornare.edu', 'Debit', '471641 274153 9153'),
-(340, '11351556796', 'commodo.hendrerit.Donec@risusIn.co.uk', 'Visa', '4532861371856588'),
-(341, '16993226083', 'et.arcu@tortornibh.net', 'Visa', '4539626923779387'),
-(342, '18904157045', 'nec@nonummy.co.uk', 'Visa', '4485828456904'),
-(343, '12172042411', 'tincidunt.dui@lacus.edu', 'Visa', '492942 1171522723'),
-(344, '19524962188', 'tempus@Sedmolestie.com', 'Visa', '453 27371 80313 674'),
-(345, '11452323893', 'libero@in.co.uk', 'Visa', '4556512346114774'),
-(346, '16343199518', 'eros@Duisac.ca', 'Visa', '4916539092938275'),
-(347, '15356347528', 'eleifend.nunc@sodalesMauris.ca', 'Visa', '4716385985798'),
-(348, '11384233348', 'Maecenas.iaculis@lorem.com', 'Visa', '4532449575903784'),
-(349, '17975761500', 'ut@arcuiaculisenim.com', 'Visa', '4402337965655'),
-(350, '12835361992', 'quis.massa.Mauris@acfacilisis.edu', 'Debit', '4556000879089183'),
-(351, '17706895546', 'Mauris.ut.quam@Aeneanegetmetus.com', 'Debit', '4716 8809 9285 4598'),
-(352, '16412874602', 'libero.et.tristique@Nulla.ca', 'Debit', '4024007198522'),
-(353, '12871469316', 'consequat@turpisnonenim.edu', 'Debit', '4532897132534'),
-(354, '11922222115', 'massa.rutrum@Nuncsollicitudincommodo.edu', 'Debit', '4485099526697501'),
-(355, '14873228244', 'sit.amet.consectetuer@laoreet.net', 'Debit', '4539263320069525'),
-(356, '17152624730', 'accumsan.sed.facilisis@amet.org', 'Debit', '4485440836350'),
-(357, '15961524921', 'Proin@nonenim.ca', 'Debit', '4532 8342 2641 6312'),
-(358, '12281407664', 'eros.turpis.non@egestas.net', 'Debit', '4556527083163784'),
-(359, '11671982972', 'dis.parturient@maurissitamet.org', 'Debit', '4916659885746'),
-(360, '15522942387', 'amet.ante.Vivamus@vel.org', 'Visa', '497423 911620 3678'),
-(361, '19388288762', 'eget.volutpat@sitametdapibus.com', 'Visa', '4024 0071 2908 6731'),
-(362, '17854216698', 'fringilla.est@loremut.edu', 'Visa', '4556214754233'),
-(363, '18614147482', 'Proin.non.massa@auctorquistristique.org', 'Visa', '4485808232218'),
-(364, '15747096813', 'Duis@Seddiamlorem.co.uk', 'Visa', '471675 385292 6980'),
-(365, '12906455775', 'Nam.ac.nulla@ante.org', 'Visa', '491670 8465873423'),
-(366, '17409532069', 'sit.amet.consectetuer@amet.ca', 'Visa', '4485087795695'),
-(367, '14263240426', 'mollis@non.org', 'Visa', '4929333683981'),
-(368, '19379222999', 'dis.parturient@ut.org', 'Visa', '428547 209276 8117'),
-(369, '12486174143', 'Etiam.gravida@nuncnullavulputate.ca', 'Visa', '453287 934423 7470'),
-(370, '12646739424', 'tortor.Nunc.commodo@Aliquamultricesiaculis.co.uk', 'Debit', '438534 043631 9476'),
-(371, '13734357164', 'luctus@vestibulum.ca', 'Debit', '4024007177716'),
-(372, '19289520264', 'ut@tristique.ca', 'Debit', '4916624869478'),
-(373, '18709636831', 'neque@interdum.ca', 'Debit', '4929306657806'),
-(374, '14758739456', 'enim.sit@convallisest.org', 'Debit', '4556499663307'),
-(375, '18992263952', 'Pellentesque.habitant@ipsumDonec.net', 'Debit', '4539948956217691'),
-(376, '17739761935', 'commodo.tincidunt@Inmi.net', 'Debit', '4539 6868 1485 0895'),
-(377, '18909630147', 'lorem.ipsum@sedfacilisis.edu', 'Debit', '4929649878150'),
-(378, '16037343299', 'Proin.velit.Sed@nuncrisus.co.uk', 'Debit', '4929 269 87 5197'),
-(379, '17171906766', 'In@mus.edu', 'Debit', '4929481993728130'),
-(380, '15736043219', 'nisi@CuraePhasellusornare.net', 'Visa', '4716111190555559'),
-(381, '12576973144', 'cubilia.Curae.Phasellus@facilisisloremtristique.edu', 'Visa', '4716256652113'),
-(382, '11915299274', 'in.consequat@atarcu.org', 'Visa', '4532376024236'),
-(383, '11974693525', 'semper.rutrum@seddui.ca', 'Visa', '492 98877 23583 621'),
-(384, '13317111776', 'cursus.a@vitaepurusgravida.com', 'Visa', '492956 6346463722'),
-(385, '16874495072', 'Integer.urna@risusquis.org', 'Visa', '4916211680849187'),
-(386, '11948202207', 'interdum.ligula.eu@ami.ca', 'Visa', '4916 632 28 0718'),
-(387, '18907836868', 'sit@nibhsit.ca', 'Visa', '464391 9613432448'),
-(388, '17584892623', 'luctus.Curabitur@Proinsedturpis.org', 'Visa', '4916 8066 4847 9744'),
-(389, '13218387719', 'ullamcorper@adipiscinglobortisrisus.co.uk', 'Visa', '4485634043821'),
-(390, '14332292774', 'semper.pretium@pretium.org', 'Debit', '471624 060968 5507'),
-(391, '11965578141', 'semper.auctor.Mauris@Nuncsed.org', 'Debit', '4556 7433 4348 1581'),
-(392, '12515024961', 'mauris@mattis.com', 'Debit', '4539065873682'),
-(393, '18984470466', 'et@malesuadavelconvallis.org', 'Debit', '4556990963529'),
-(394, '13317436635', 'Proin@liberoProinmi.org', 'Debit', '4990515695032319'),
-(395, '13347317617', 'ultrices.Duis.volutpat@Donecat.com', 'Debit', '4485 1473 8357 0566'),
-(396, '12191283842', 'feugiat@euultrices.org', 'Debit', '4929712905245'),
-(397, '12233766753', 'fringilla.porttitor@tortornibhsit.org', 'Debit', '4532587517960'),
-(398, '17158043957', 'volutpat@aliquameuaccumsan.org', 'Debit', '4024007197581'),
-(399, '15905776902', 'ut.ipsum@ligula.co.uk', 'Debit', '4556210806334');
+INSERT INTO `CUSTOMER` (`Id`, `Phone_number`, `Email`, `Payment_Method`, `Card_number`, `Membership_Id`) VALUES
+(100, '18114955966', 'enim@arcu.com', 'Visa', '4532260272110262', 10),
+(101, '16834646087', 'Etiam@convallisconvallisdolor.net', 'Visa', '4469271211028868', 11),
+(102, '15689988251', 'congue.a@cubilia.com', 'Visa', '4916 271 87 4540', NULL),
+(103, '15355204219', 'sed@Morbivehicula.edu', 'Visa', '4556989470759', NULL),
+(104, '15542297633', 'Lorem.ipsum.dolor@Aliquameratvolutpat.edu', 'Visa', '4485994251550', NULL),
+(105, '12477195600', 'consectetuer.ipsum.nunc@Pellentesquetincidunt.ca', 'Visa', '4532129966808', NULL),
+(106, '11085642376', 'non.sollicitudin.a@risusDonecnibh.com', 'Visa', '4556 4406 3298 4348', NULL),
+(107, '13042967179', 'eu@maurisblanditmattis.com', 'Visa', '448 53219 73839 729', NULL),
+(108, '13258199215', 'blandit.viverra.Donec@magnatellusfaucibus.net', 'Visa', '4485744173591', NULL),
+(109, '16673450238', 'gravida@Integer.net', 'Visa', '4716898655763', NULL),
+(110, '19585817295', 'orci.adipiscing.non@vitaeposuere.co.uk', 'Debit', '4929393323635', 15),
+(111, '13164869655', 'suscipit.nonummy.Fusce@sitamet.ca', 'Debit', '4716864420978', NULL),
+(112, '18828465984', 'Morbi.non@Suspendisse.net', 'Debit', '4929324093984', 17),
+(113, '17321740110', 'et@diamdictum.edu', 'Debit', '4024007120641', 20),
+(114, '11939006102', 'diam@vitae.co.uk', 'Debit', '4384674297787', NULL),
+(115, '11487936148', 'mauris.elit@dignissimtempor.com', 'Debit', '491661 101873 4219', NULL),
+(116, '14323319625', 'tincidunt@acmetusvitae.edu', 'Debit', '4716942133871152', NULL),
+(117, '17675279162', 'luctus.Curabitur@egetmassa.co.uk', 'Debit', '4916845817595', NULL),
+(118, '18582122602', 'Cras.convallis@faucibus.net', 'Debit', '471650 914610 7963', NULL),
+(119, '13092701160', 'felis.purus.ac@iderat.net', 'Debit', '4601 6375 6933 5668', 21),
+(120, '18039672437', 'nulla.Integer.vulputate@magna.co.uk', 'Visa', '4716931640728286', NULL),
+(121, '11018355544', 'libero.Proin@mollisDuissit.org', 'Visa', '4556102051980427', 22),
+(122, '15503961879', 'feugiat.non@non.org', 'Visa', '4539848926294', NULL),
+(123, '11004266749', 'felis.Nulla.tempor@Quisque.ca', 'Visa', '4716006393224', 25),
+(124, '17342620243', 'Aenean@Donec.ca', 'Visa', '4716403220120565', NULL),
+(125, '11884476608', 'semper.rutrum.Fusce@Proinsedturpis.com', 'Visa', '4716141820570298', 30),
+(126, '12837031239', 'erat@Aeneanegestas.ca', 'Visa', '4716603063071870', NULL),
+(127, '15188999046', 'tristique.aliquet@ullamcorpernislarcu.co.uk', 'Visa', '4716737591019470', NULL),
+(128, '14386252691', 'Cras.eu.tellus@iaculislacus.org', 'Visa', '4556 714 31 5543', NULL),
+(129, '14979554669', 'felis@auctorveliteget.co.uk', 'Visa', '471624 962786 4333', NULL),
+(130, '15563860747', 'et.magnis.dis@atauctorullamcorper.com', 'Debit', '4485784311224708', 36),
+(131, '15506145210', 'commodo.at.libero@Phaselluslibero.ca', 'Debit', '4024007130780', 40),
+(132, '13449184680', 'odio@augueut.co.uk', 'Debit', '4929821894371', 41),
+(133, '11374995785', 'facilisis.magna.tellus@Sed.net', 'Debit', '492909 2511695824', 42),
+(134, '12314619297', 'semper.erat.in@Nullamvelit.ca', 'Debit', '455601 458362 7600', NULL),
+(135, '17989769233', 'ut.pellentesque@NullafacilisisSuspendisse.co.uk', 'Debit', '4916070689230', NULL),
+(136, '17467530583', 'blandit@montesnasceturridiculus.org', 'Debit', '4024007198262882', NULL),
+(137, '17889806364', 'enim.condimentum.eget@vulputate.co.uk', 'Debit', '4929409902109', NULL),
+(138, '15063328531', 'Nulla@tellusSuspendissesed.ca', 'Debit', '4929787078662', NULL),
+(139, '14396573915', 'non@imperdiet.edu', 'Debit', '4485 4696 5379 3458', 43),
+(140, '19374362220', 'dolor@nonmagnaNam.ca', 'Visa', '453 26775 20371 422', 31),
+(141, '13015268641', 'quis.turpis.vitae@Maecenas.org', 'Visa', '4929 5801 9463 6818', NULL),
+(142, '13589476442', 'Nunc@diamDuis.co.uk', 'Visa', '453 20408 70846 164', 35),
+(143, '19946028175', 'Pellentesque.habitant.morbi@Quisquefringilla.net', 'Visa', '4916054240364', NULL),
+(144, '17326642223', 'amet@variusultrices.ca', 'Visa', '4916 5767 8631 2219', NULL),
+(145, '17073603586', 'vitae.odio.sagittis@ac.net', 'Visa', '4485613243517', 10),
+(146, '13795861645', 'volutpat.Nulla@ultricesDuis.co.uk', 'Visa', '4485040596172', 49),
+(147, '14548788306', 'in@Innecorci.org', 'Visa', '4985589461951', 1),
+(148, '15819653255', 'blandit@eratin.org', 'Visa', '4113666320392', NULL),
+(149, '16884902483', 'neque.et.nunc@Namnullamagna.com', 'Visa', '4556 807 05 0114', 5),
+(150, '13729142647', 'luctus.ut.pellentesque@ante.co.uk', 'Debit', '4716 3746 4357 1728', NULL),
+(151, '16541983917', 'amet@anteipsumprimis.net', 'Debit', '4539487294319', NULL),
+(152, '18389995867', 'ut.lacus.Nulla@commodoatlibero.com', 'Debit', '491 62820 90472 506', 6),
+(153, '19206054274', 'eget.laoreet.posuere@egetipsumDonec.org', 'Debit', '4716 037 75 3974', NULL),
+(154, '16276743949', 'magnis.dis.parturient@Duisa.ca', 'Debit', '4539690495034', NULL),
+(155, '16746751840', 'libero.Proin@congueturpis.com', 'Debit', '4539 995 53 1087', 7),
+(156, '14153158708', 'et.ultrices.posuere@turpisnonenim.ca', 'Debit', '4024007168590', NULL),
+(157, '17674452260', 'Quisque.purus.sapien@duisemper.com', 'Debit', '4024 0071 8692 2299', 8),
+(158, '11241535590', 'Vivamus@erat.com', 'Debit', '4929720964473', 9),
+(159, '11679479295', 'rhoncus.Nullam.velit@condimentumDonecat.org', 'Debit', '492 96618 66880 627', 50),
+(160, '18704042219', 'ac@inhendrerit.com', 'Visa', '4916 352 12 5804', NULL),
+(161, '13333661401', 'urna.et@urna.edu', 'Visa', '4916 630 34 3518', NULL),
+(162, '13181218833', 'Integer.sem.elit@lacus.edu', 'Visa', '453247 3288991258', 51),
+(163, '18809598903', 'vel@eleifend.edu', 'Visa', '4485296855346714', 52),
+(164, '14305929241', 'euismod@Vestibulumaccumsan.net', 'Visa', '4539367014827468', NULL),
+(165, '12804733679', 'Morbi.neque.tellus@dis.edu', 'Visa', '4556739879085', NULL),
+(166, '19421443452', 'risus.Nunc.ac@nec.org', 'Visa', '4716913730534', NULL),
+(167, '19701522798', 'sem@duinectempus.edu', 'Visa', '4929180377471', NULL),
+(168, '16546851868', 'massa@magnisdisparturient.org', 'Visa', '4532 9700 4887 3239', NULL),
+(169, '16757707709', 'Nulla.dignissim@sitametconsectetuer.co.uk', 'Visa', '492919 8286871365', NULL),
+(170, '12737190644', 'Proin.mi@nonante.ca', 'Debit', '4929170497601741', 55),
+(171, '13786330831', 'Cras.sed.leo@congueelitsed.com', 'Debit', '4532 8826 0374 9599', NULL),
+(172, '12671022650', 'at.pretium.aliquet@ornaresagittis.ca', 'Debit', '425715 099385 1000', NULL),
+(173, '17031997888', 'sed.dictum.eleifend@lobortis.com', 'Debit', '4556006625500', NULL),
+(174, '16234018211', 'pellentesque.Sed.dictum@placerat.edu', 'Debit', '4916153015534318', NULL),
+(175, '18733851902', 'non.egestas@accumsanneque.ca', 'Debit', '4716674382490513', NULL),
+(176, '16018898951', 'Suspendisse@etnunc.org', 'Debit', '4916 8351 8899 3855', NULL),
+(177, '13548566792', 'convallis.ligula@sed.ca', 'Debit', '4916850737068', NULL),
+(178, '13906510703', 'felis.adipiscing@nuncsed.net', 'Debit', '4556752330438', NULL),
+(179, '14035026554', 'eget.venenatis.a@inmolestietortor.co.uk', 'Debit', '4998466259228665', NULL),
+(180, '14217809524', 'luctus.felis.purus@loremut.edu', 'Visa', '4916953952762', NULL),
+(181, '17223220008', 'leo.Morbi.neque@vel.com', 'Visa', '491685 4272108064', NULL),
+(182, '13897587036', 'sociis.natoque.penatibus@atortor.com', 'Visa', '4532462404359', NULL),
+(183, '18028837616', 'erat@Duismi.com', 'Visa', '492 74517 24669 434', NULL),
+(184, '16429943604', 'leo.Vivamus.nibh@turpis.edu', 'Visa', '4556193185722', NULL),
+(185, '18819788373', 'Etiam.vestibulum.massa@etmagnis.edu', 'Visa', '4556360744023639', NULL),
+(186, '15355541586', 'sit.amet@Utnecurna.org', 'Visa', '4929869266573', NULL),
+(187, '15454475135', 'ac.ipsum@etliberoProin.ca', 'Visa', '4556738824439', NULL),
+(188, '14968313379', 'natoque@blanditviverraDonec.net', 'Visa', '402400 718398 9200', NULL),
+(189, '12377812583', 'arcu@pedeacurna.edu', 'Visa', '4485 864 93 6108', NULL),
+(190, '14421271546', 'enim.gravida.sit@felispurusac.co.uk', 'Debit', '4335329335596', NULL),
+(191, '19416398410', 'non.lorem@sapienmolestieorci.com', 'Debit', '4539366770454', NULL),
+(192, '19389235014', 'mattis.semper@tristique.edu', 'Debit', '4490950920230', NULL),
+(193, '12732883026', 'vel.arcu.Curabitur@sollicitudinorci.net', 'Debit', '4539947169499', NULL),
+(194, '13453761090', 'felis@Aliquamvulputate.net', 'Debit', '4024007133503', NULL),
+(195, '19064768640', 'Nulla.interdum@Aliquamultrices.ca', 'Debit', '4916548679789', NULL),
+(196, '13323838413', 'aliquam@varius.net', 'Debit', '4485 828 47 1044', NULL),
+(197, '15804980919', 'Nam@egestas.co.uk', 'Debit', '455680 2547700145', NULL),
+(198, '12333383081', 'Nulla.semper.tellus@Sedneque.ca', 'Debit', '404189 1654084552', NULL),
+(199, '15729392301', 'lectus.ante.dictum@Duiselementum.com', 'Debit', '4735024041177050', NULL),
+(200, '19343124095', 'vulputate@ultricesVivamusrhoncus.edu', 'Visa', '471675 642305 9884', NULL),
+(201, '15031155737', 'risus@antebibendumullamcorper.co.uk', 'Visa', '4716 813 04 0133', NULL),
+(202, '13796416662', 'arcu@actellusSuspendisse.co.uk', 'Visa', '4532967761675', NULL),
+(203, '17535437811', 'augue.Sed@gravida.co.uk', 'Visa', '4247909078459598', NULL),
+(204, '15083250596', 'tincidunt.tempus.risus@convalliserat.com', 'Visa', '4485508933578', NULL),
+(205, '11572189456', 'non.dui.nec@vitaeerat.net', 'Visa', '4024007156314', NULL),
+(206, '11974793198', 'Maecenas.malesuada@adipiscingMaurismolestie.net', 'Visa', '4024 0071 7784 1045', NULL),
+(207, '16029612469', 'aliquam.adipiscing.lacus@tinciduntDonecvitae.org', 'Visa', '4916665761980', NULL),
+(208, '16954055977', 'Fusce@sodales.ca', 'Visa', '4793070733304', NULL),
+(209, '11921756245', 'enim.sit@Seddiam.org', 'Visa', '4929288539733', NULL),
+(210, '14293697990', 'iaculis@ascelerisque.co.uk', 'Debit', '453950 1481766664', NULL),
+(211, '18852847104', 'tincidunt.dui.augue@magnaet.ca', 'Debit', '4556225191573', NULL),
+(212, '11777575346', 'tristique@Nulla.edu', 'Debit', '4539859396809', NULL),
+(213, '18994255301', 'arcu@accumsanlaoreetipsum.com', 'Debit', '4916853772260', NULL),
+(214, '15377573013', 'Phasellus.fermentum.convallis@duiquis.com', 'Debit', '4695953195888336', NULL),
+(215, '14552021133', 'metus.urna@orcitincidunt.co.uk', 'Debit', '496245 448760 6128', NULL),
+(216, '11064298152', 'velit@Innec.co.uk', 'Debit', '4556392785702', NULL),
+(217, '17453143707', 'ultrices.iaculis.odio@dui.net', 'Debit', '4024007138668', NULL),
+(218, '19146265079', 'In.nec.orci@Maecenas.ca', 'Debit', '453295 7974296873', NULL),
+(219, '19036518747', 'aliquet.nec@nisl.net', 'Debit', '4556298643658', NULL),
+(220, '13278213428', 'pede@Nullamvelitdui.edu', 'Visa', '4929729633111', NULL),
+(221, '13664194573', 'ante@velitegetlaoreet.com', 'Visa', '4485412222944', NULL),
+(222, '11812080357', 'Nulla.interdum@nuncacmattis.edu', 'Visa', '4556261935099', NULL),
+(223, '17077773551', 'ipsum.Suspendisse@massarutrummagna.co.uk', 'Visa', '471 65954 49404 140', NULL),
+(224, '17386586515', 'erat@elitfermentum.net', 'Visa', '491696 122188 1160', NULL),
+(225, '12489474002', 'quam.Pellentesque@nectellus.net', 'Visa', '455 63510 03350 193', NULL),
+(226, '12022953924', 'tincidunt.Donec@lectusquis.edu', 'Visa', '4083093333385', NULL),
+(227, '18408422834', 'rhoncus.Donec.est@Cras.edu', 'Visa', '4556323304896', NULL),
+(228, '19795331720', 'Cras.eget.nisi@ante.org', 'Visa', '4539 600 97 5737', NULL),
+(229, '19576720916', 'dictum.ultricies@magnaPraesent.co.uk', 'Visa', '448 55986 34172 877', NULL),
+(230, '16089361444', 'elit@nuncnullavulputate.co.uk', 'Debit', '4556709499930', NULL),
+(231, '16408068886', 'sem@habitantmorbitristique.net', 'Debit', '4929676592690', NULL),
+(232, '14775602716', 'eu.neque@sedfacilisisvitae.org', 'Debit', '4485 1914 2791 7144', NULL),
+(233, '17879015194', 'Nunc.sollicitudin.commodo@tacitisociosquad.co.uk', 'Debit', '4556953714893', NULL),
+(234, '11477804101', 'sagittis.felis.Donec@dignissimlacusAliquam.edu', 'Debit', '4024 007 13 3909', NULL),
+(235, '12945177123', 'et@ametconsectetuer.ca', 'Debit', '4485673390224', NULL),
+(236, '13107543837', 'dictum.placerat.augue@quisaccumsanconvallis.co.uk', 'Debit', '448593 924801 2770', NULL),
+(237, '17877484434', 'odio.vel.est@sagittis.net', 'Debit', '4208313667121999', NULL),
+(238, '16945217130', 'turpis.Aliquam@sodalesMaurisblandit.co.uk', 'Debit', '4716955908360', NULL),
+(239, '17254459348', 'libero.est@vehiculaaliquetlibero.com', 'Debit', '448 58906 09575 428', NULL),
+(240, '12368744797', 'lorem.sit@ipsumdolorsit.org', 'Visa', '4916977086750084', NULL),
+(241, '13222812658', 'Praesent.eu.dui@iaculisodioNam.net', 'Visa', '453928 085688 6510', NULL),
+(242, '16581114396', 'rhoncus@odiosagittis.org', 'Visa', '4916783272126', NULL),
+(243, '14523241530', 'Quisque@Proin.com', 'Visa', '4716 0083 6750 2309', NULL),
+(244, '16684253537', 'orci.Ut@tinciduntvehicularisus.edu', 'Visa', '4556036651997', NULL),
+(245, '15604711807', 'augue.porttitor@nullamagnamalesuada.ca', 'Visa', '4539939564921196', NULL),
+(246, '18706721866', 'eu@consequatnec.co.uk', 'Visa', '4929776355360', NULL),
+(247, '12826944832', 'gravida.molestie.arcu@molestieSed.edu', 'Visa', '4485437165099953', NULL),
+(248, '14425844765', 'tincidunt.dui.augue@laoreetposuere.org', 'Visa', '4556 526 09 4914', NULL),
+(249, '16167871532', 'molestie@condimentumeget.org', 'Visa', '402400 711727 7037', NULL),
+(250, '17286682581', 'quis.accumsan@enimmi.edu', 'Debit', '4916067046790', NULL),
+(251, '14265352314', 'dis.parturient.montes@Suspendisse.co.uk', 'Debit', '4532495432476', NULL),
+(252, '14734591994', 'id.sapien@sitamet.co.uk', 'Debit', '4024007198977', NULL),
+(253, '17627695667', 'amet@morbi.net', 'Debit', '4024007171719', NULL),
+(254, '18385504292', 'ultrices.sit.amet@lorem.net', 'Debit', '471601 772305 9466', NULL),
+(255, '15699278884', 'mollis.Duis@erat.net', 'Debit', '4024007113764996', NULL),
+(256, '13098579425', 'vitae.purus@lobortis.com', 'Debit', '4929520598467170', NULL),
+(257, '16672745807', 'vitae@nislelementum.edu', 'Debit', '448575 196759 8503', NULL),
+(258, '19027997592', 'ac.sem@utcursus.ca', 'Debit', '471 66462 99631 322', NULL),
+(259, '16621922627', 'felis.ullamcorper.viverra@consequatlectussit.org', 'Debit', '4024007167162', NULL),
+(260, '14798599471', 'sem.mollis@ridiculus.org', 'Visa', '4443886754421', NULL),
+(261, '12856897206', 'ut@idrisusquis.edu', 'Visa', '4485479539221533', NULL),
+(262, '16714024477', 'vestibulum@Donec.co.uk', 'Visa', '4556593066217', NULL),
+(263, '18055058164', 'mollis.Phasellus.libero@tinciduntdui.co.uk', 'Visa', '4532893697670', NULL),
+(264, '19207338639', 'tempor.augue.ac@orcitincidunt.net', 'Visa', '4556558801384', NULL),
+(265, '17138162040', 'sociis@egestasAliquam.org', 'Visa', '4916 464 03 2815', NULL),
+(266, '15393257399', 'gravida.molestie.arcu@risusDonec.co.uk', 'Visa', '4556 274 72 3482', NULL),
+(267, '12184237411', 'non@nonummyipsum.co.uk', 'Visa', '4556605631891', NULL),
+(268, '17097103089', 'mus.Donec.dignissim@nuncullamcorpereu.net', 'Visa', '4556557874738171', NULL),
+(269, '17082641474', 'amet@facilisisSuspendissecommodo.edu', 'Visa', '4166853049663309', NULL),
+(270, '11473892244', 'vitae@dolorvitaedolor.net', 'Debit', '4539490306471157', NULL),
+(271, '17766286402', 'tempus.risus.Donec@imperdietornareIn.co.uk', 'Debit', '4556770132389949', NULL),
+(272, '16745892714', 'ac.urna@vulputateduinec.co.uk', 'Debit', '492 99286 93864 912', NULL),
+(273, '12374320402', 'amet@eu.co.uk', 'Debit', '4556855519202425', NULL),
+(274, '19937309810', 'magna.nec@nibh.co.uk', 'Debit', '4916076288269231', NULL),
+(275, '17493369992', 'fringilla.est.Mauris@diamSed.net', 'Debit', '4024007163807', NULL),
+(276, '13125356880', 'sit@diamdictum.net', 'Debit', '491662 494904 6389', NULL),
+(277, '13058226415', 'commodo.auctor.velit@liberolacusvarius.net', 'Debit', '4221885732899', NULL),
+(278, '14664865162', 'odio@odiosempercursus.ca', 'Debit', '4556032378965134', NULL),
+(279, '17816004785', 'faucibus.orci.luctus@netusetmalesuada.edu', 'Debit', '4556206486190', NULL),
+(280, '14179309217', 'mauris.ut@Nuncsedorci.co.uk', 'Visa', '4485053631269623', NULL),
+(281, '18789022261', 'ut.ipsum.ac@euismodurnaNullam.org', 'Visa', '4716061292477', NULL),
+(282, '15813771101', 'Nam.nulla.magna@accumsaninterdum.net', 'Visa', '4024007183003', NULL),
+(283, '14154824457', 'vestibulum@Maurisnulla.ca', 'Visa', '4716093257753', NULL),
+(284, '11618396687', 'urna.Nullam.lobortis@a.org', 'Visa', '4556 520 70 0904', NULL),
+(285, '12105329919', 'dictum.eu@anteMaecenasmi.net', 'Visa', '4929 957 16 1165', NULL),
+(286, '12707711286', 'magna.Phasellus.dolor@egestasa.org', 'Visa', '4485441496519', NULL),
+(287, '15558681177', 'sit.amet.consectetuer@purussapiengravida.ca', 'Visa', '471602 778496 1773', NULL),
+(288, '17272894682', 'quis.diam.Pellentesque@euerat.co.uk', 'Visa', '4556491060437', NULL),
+(289, '14771163191', 'mattis@quis.edu', 'Visa', '4024007173764', NULL),
+(290, '18339403738', 'vitae.sodales.at@velitinaliquet.co.uk', 'Debit', '491673 7471760514', NULL),
+(291, '12553324790', 'eleifend.non.dapibus@atpede.net', 'Debit', '4539330912121434', NULL),
+(292, '18428985865', 'egestas@arcu.com', 'Debit', '492941 0630501956', NULL),
+(293, '11417465112', 'ornare.placerat.orci@eros.com', 'Debit', '4935925637079', NULL),
+(294, '16619127227', 'lorem.sit@vestibulumlorem.org', 'Debit', '4864095973504', NULL),
+(295, '13697573144', 'in.cursus@velitegetlaoreet.net', 'Debit', '4024 007 14 0631', NULL),
+(296, '17092200439', 'vehicula.aliquet.libero@maurisrhoncus.net', 'Debit', '4024007165873356', NULL),
+(297, '15912550001', 'consequat.dolor.vitae@Nam.ca', 'Debit', '4716960569942', NULL),
+(298, '14654719750', 'dolor.Donec.fringilla@musProinvel.co.uk', 'Debit', '453 21471 52998 777', NULL),
+(299, '13047444831', 'eget@necmollis.net', 'Debit', '4561745873239', NULL),
+(300, '11281458210', 'adipiscing.enim@est.ca', 'Visa', '4916708666923', NULL),
+(301, '13023497647', 'varius@maurissapiencursus.com', 'Visa', '4556 184 76 8460', NULL),
+(302, '14219337060', 'Sed.nunc@magna.net', 'Visa', '4027671951670', NULL),
+(303, '19113672763', 'et.magnis@Phasellusfermentumconvallis.net', 'Visa', '471 60451 31244 347', NULL),
+(304, '12982937997', 'vulputate.risus@Ut.com', 'Visa', '4539068366359437', NULL),
+(305, '15679269314', 'Aenean.massa.Integer@accumsansed.org', 'Visa', '4929745775656', NULL),
+(306, '11937379312', 'mauris@luctusCurabituregestas.org', 'Visa', '4024007163575', NULL),
+(307, '13952659049', 'et.malesuada.fames@rutrumjustoPraesent.edu', 'Visa', '4916275214657200', NULL),
+(308, '12323124538', 'egestas.Duis@fringillacursus.net', 'Visa', '4485 052 70 9697', NULL),
+(309, '15078120695', 'eu.dui.Cum@dictumProin.edu', 'Visa', '4687662620541', NULL),
+(310, '19756112402', 'feugiat.metus@Nuncmauriselit.edu', 'Debit', '448 52816 66443 793', NULL),
+(311, '17314755704', 'libero@vitaediamProin.org', 'Debit', '4024 0071 7440 4334', NULL),
+(312, '19041320799', 'Ut@leo.net', 'Debit', '4916012438520603', NULL),
+(313, '11708429062', 'sollicitudin.a@risusquis.ca', 'Debit', '4556341574066', NULL),
+(314, '17685424421', 'eget@inconsequat.ca', 'Debit', '4716865615998', NULL),
+(315, '19908535566', 'adipiscing@taciti.net', 'Debit', '4311 931 02 8325', NULL),
+(316, '11615287461', 'non.lorem.vitae@ipsumCurabiturconsequat.edu', 'Debit', '4539145037209', NULL),
+(317, '11095547824', 'ullamcorper.Duis.cursus@molestiedapibusligula.net', 'Debit', '4916268607317', NULL),
+(318, '19093261816', 'ultrices.iaculis.odio@lacinia.com', 'Debit', '4716940246747012', NULL),
+(319, '19793467919', 'venenatis@ornarelectusante.org', 'Debit', '4532558719553', NULL),
+(320, '11714139988', 'eu.sem.Pellentesque@sollicitudin.edu', 'Visa', '4929219965445337', NULL),
+(321, '13443692709', 'quam@pellentesque.edu', 'Visa', '4929652937398', NULL),
+(322, '15341724802', 'parturient.montes.nascetur@nonummy.ca', 'Visa', '4024007112599732', NULL),
+(323, '15818030376', 'consequat.nec.mollis@arcu.org', 'Visa', '4485285276844456', NULL),
+(324, '13861718796', 'justo.sit.amet@Quisquelibero.edu', 'Visa', '4916928345566654', NULL),
+(325, '14793426092', 'velit.eget@ante.edu', 'Visa', '4916391840716557', NULL),
+(326, '17559365809', 'nec.enim@eratSednunc.com', 'Visa', '4556273372422231', NULL),
+(327, '18016509245', 'metus.Aenean.sed@liberodui.co.uk', 'Visa', '4716139479451984', NULL),
+(328, '15964389395', 'Curae.Donec.tincidunt@magna.ca', 'Visa', '4716 087 49 7332', NULL),
+(329, '19678078310', 'semper.rutrum.Fusce@lacuspedesagittis.ca', 'Visa', '4556183823977', NULL),
+(330, '12648081537', 'ac@egetmassa.com', 'Debit', '4539299755481', NULL),
+(331, '18484054714', 'sit@Integeraliquamadipiscing.net', 'Debit', '448550 797337 2238', NULL),
+(332, '11808360257', 'a.facilisis@euenim.com', 'Debit', '448550 8590264931', NULL),
+(333, '15496450170', 'vitae.erat@tempusloremfringilla.ca', 'Debit', '492920 8371425223', NULL),
+(334, '12522983860', 'fringilla@ornaresagittisfelis.net', 'Debit', '4198 892 08 1033', NULL),
+(335, '15583931002', 'aliquet.diam@urnaVivamusmolestie.co.uk', 'Debit', '4539 6745 8421 2371', NULL),
+(336, '18728702519', 'at@semelitpharetra.co.uk', 'Debit', '471651 5590412650', NULL),
+(337, '15524606187', 'lacinia.mattis@pede.ca', 'Debit', '4916115055342605', NULL),
+(338, '15686578752', 'tempus@utodio.org', 'Debit', '4916156815553354', NULL),
+(339, '18605716850', 'non.lobortis@Phasellusornare.edu', 'Debit', '471641 274153 9153', NULL),
+(340, '11351556796', 'commodo.hendrerit.Donec@risusIn.co.uk', 'Visa', '4532861371856588', NULL),
+(341, '16993226083', 'et.arcu@tortornibh.net', 'Visa', '4539626923779387', NULL),
+(342, '18904157045', 'nec@nonummy.co.uk', 'Visa', '4485828456904', NULL),
+(343, '12172042411', 'tincidunt.dui@lacus.edu', 'Visa', '492942 1171522723', NULL),
+(344, '19524962188', 'tempus@Sedmolestie.com', 'Visa', '453 27371 80313 674', NULL),
+(345, '11452323893', 'libero@in.co.uk', 'Visa', '4556512346114774', NULL),
+(346, '16343199518', 'eros@Duisac.ca', 'Visa', '4916539092938275', NULL),
+(347, '15356347528', 'eleifend.nunc@sodalesMauris.ca', 'Visa', '4716385985798', NULL),
+(348, '11384233348', 'Maecenas.iaculis@lorem.com', 'Visa', '4532449575903784', NULL),
+(349, '17975761500', 'ut@arcuiaculisenim.com', 'Visa', '4402337965655', NULL),
+(350, '12835361992', 'quis.massa.Mauris@acfacilisis.edu', 'Debit', '4556000879089183', NULL),
+(351, '17706895546', 'Mauris.ut.quam@Aeneanegetmetus.com', 'Debit', '4716 8809 9285 4598', NULL),
+(352, '16412874602', 'libero.et.tristique@Nulla.ca', 'Debit', '4024007198522', NULL),
+(353, '12871469316', 'consequat@turpisnonenim.edu', 'Debit', '4532897132534', NULL),
+(354, '11922222115', 'massa.rutrum@Nuncsollicitudincommodo.edu', 'Debit', '4485099526697501', NULL),
+(355, '14873228244', 'sit.amet.consectetuer@laoreet.net', 'Debit', '4539263320069525', NULL),
+(356, '17152624730', 'accumsan.sed.facilisis@amet.org', 'Debit', '4485440836350', NULL),
+(357, '15961524921', 'Proin@nonenim.ca', 'Debit', '4532 8342 2641 6312', NULL),
+(358, '12281407664', 'eros.turpis.non@egestas.net', 'Debit', '4556527083163784', NULL),
+(359, '11671982972', 'dis.parturient@maurissitamet.org', 'Debit', '4916659885746', NULL),
+(360, '15522942387', 'amet.ante.Vivamus@vel.org', 'Visa', '497423 911620 3678', NULL),
+(361, '19388288762', 'eget.volutpat@sitametdapibus.com', 'Visa', '4024 0071 2908 6731', NULL),
+(362, '17854216698', 'fringilla.est@loremut.edu', 'Visa', '4556214754233', NULL),
+(363, '18614147482', 'Proin.non.massa@auctorquistristique.org', 'Visa', '4485808232218', NULL),
+(364, '15747096813', 'Duis@Seddiamlorem.co.uk', 'Visa', '471675 385292 6980', NULL),
+(365, '12906455775', 'Nam.ac.nulla@ante.org', 'Visa', '491670 8465873423', NULL),
+(366, '17409532069', 'sit.amet.consectetuer@amet.ca', 'Visa', '4485087795695', NULL),
+(367, '14263240426', 'mollis@non.org', 'Visa', '4929333683981', NULL),
+(368, '19379222999', 'dis.parturient@ut.org', 'Visa', '428547 209276 8117', NULL),
+(369, '12486174143', 'Etiam.gravida@nuncnullavulputate.ca', 'Visa', '453287 934423 7470', NULL),
+(370, '12646739424', 'tortor.Nunc.commodo@Aliquamultricesiaculis.co.uk', 'Debit', '438534 043631 9476', NULL),
+(371, '13734357164', 'luctus@vestibulum.ca', 'Debit', '4024007177716', NULL),
+(372, '19289520264', 'ut@tristique.ca', 'Debit', '4916624869478', NULL),
+(373, '18709636831', 'neque@interdum.ca', 'Debit', '4929306657806', NULL),
+(374, '14758739456', 'enim.sit@convallisest.org', 'Debit', '4556499663307', NULL),
+(375, '18992263952', 'Pellentesque.habitant@ipsumDonec.net', 'Debit', '4539948956217691', NULL),
+(376, '17739761935', 'commodo.tincidunt@Inmi.net', 'Debit', '4539 6868 1485 0895', NULL),
+(377, '18909630147', 'lorem.ipsum@sedfacilisis.edu', 'Debit', '4929649878150', NULL),
+(378, '16037343299', 'Proin.velit.Sed@nuncrisus.co.uk', 'Debit', '4929 269 87 5197', NULL),
+(379, '17171906766', 'In@mus.edu', 'Debit', '4929481993728130', NULL),
+(380, '15736043219', 'nisi@CuraePhasellusornare.net', 'Visa', '4716111190555559', NULL),
+(381, '12576973144', 'cubilia.Curae.Phasellus@facilisisloremtristique.edu', 'Visa', '4716256652113', NULL),
+(382, '11915299274', 'in.consequat@atarcu.org', 'Visa', '4532376024236', NULL),
+(383, '11974693525', 'semper.rutrum@seddui.ca', 'Visa', '492 98877 23583 621', NULL),
+(384, '13317111776', 'cursus.a@vitaepurusgravida.com', 'Visa', '492956 6346463722', NULL),
+(385, '16874495072', 'Integer.urna@risusquis.org', 'Visa', '4916211680849187', NULL),
+(386, '11948202207', 'interdum.ligula.eu@ami.ca', 'Visa', '4916 632 28 0718', NULL),
+(387, '18907836868', 'sit@nibhsit.ca', 'Visa', '464391 9613432448', NULL),
+(388, '17584892623', 'luctus.Curabitur@Proinsedturpis.org', 'Visa', '4916 8066 4847 9744', NULL),
+(389, '13218387719', 'ullamcorper@adipiscinglobortisrisus.co.uk', 'Visa', '4485634043821', NULL),
+(390, '14332292774', 'semper.pretium@pretium.org', 'Debit', '471624 060968 5507', NULL),
+(391, '11965578141', 'semper.auctor.Mauris@Nuncsed.org', 'Debit', '4556 7433 4348 1581', NULL),
+(392, '12515024961', 'mauris@mattis.com', 'Debit', '4539065873682', NULL),
+(393, '18984470466', 'et@malesuadavelconvallis.org', 'Debit', '4556990963529', NULL),
+(394, '13317436635', 'Proin@liberoProinmi.org', 'Debit', '4990515695032319', NULL),
+(395, '13347317617', 'ultrices.Duis.volutpat@Donecat.com', 'Debit', '4485 1473 8357 0566', NULL),
+(396, '12191283842', 'feugiat@euultrices.org', 'Debit', '4929712905245', NULL),
+(397, '12233766753', 'fringilla.porttitor@tortornibhsit.org', 'Debit', '4532587517960', NULL),
+(398, '17158043957', 'volutpat@aliquameuaccumsan.org', 'Debit', '4024007197581', NULL),
+(399, '15905776902', 'ut.ipsum@ligula.co.uk', 'Debit', '4556210806334', NULL);
 
 -- --------------------------------------------------------
 
 --
---  table `DISCOUNT`
+-- Table structure for table `DISCOUNT`
 --
 
 CREATE TABLE `DISCOUNT` (
@@ -439,7 +466,7 @@ CREATE TABLE `DISCOUNT` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- data for table `DISCOUNT`
+-- Dumping data for table `DISCOUNT`
 --
 
 INSERT INTO `DISCOUNT` (`ID`, `Amount`, `Discout_Type`) VALUES
@@ -455,7 +482,7 @@ INSERT INTO `DISCOUNT` (`ID`, `Amount`, `Discout_Type`) VALUES
 -- --------------------------------------------------------
 
 --
---  table `GENRE`
+-- Table structure for table `GENRE`
 --
 
 CREATE TABLE `GENRE` (
@@ -464,7 +491,7 @@ CREATE TABLE `GENRE` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- data for table `GENRE`
+-- Dumping data for table `GENRE`
 --
 
 INSERT INTO `GENRE` (`Id`, `Genre_Title`) VALUES
@@ -481,7 +508,7 @@ INSERT INTO `GENRE` (`Id`, `Genre_Title`) VALUES
 -- --------------------------------------------------------
 
 --
---  table `ITEM`
+-- Table structure for table `ITEM`
 --
 
 CREATE TABLE `ITEM` (
@@ -490,7 +517,7 @@ CREATE TABLE `ITEM` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
---  data for table `ITEM`
+-- Dumping data for table `ITEM`
 --
 
 INSERT INTO `ITEM` (`Id`, `Description`) VALUES
@@ -513,7 +540,7 @@ INSERT INTO `ITEM` (`Id`, `Description`) VALUES
 -- --------------------------------------------------------
 
 --
---  table `ITEM_LINE`
+-- Table structure for table `ITEM_LINE`
 --
 
 CREATE TABLE `ITEM_LINE` (
@@ -522,7 +549,7 @@ CREATE TABLE `ITEM_LINE` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
---  data for table `ITEM_LINE`
+-- Dumping data for table `ITEM_LINE`
 --
 
 INSERT INTO `ITEM_LINE` (`Receipt_Id`, `Item_Id`) VALUES
@@ -628,7 +655,7 @@ INSERT INTO `ITEM_LINE` (`Receipt_Id`, `Item_Id`) VALUES
 -- --------------------------------------------------------
 
 --
--- table `MEMBERSHIP`
+-- Table structure for table `MEMBERSHIP`
 --
 
 CREATE TABLE `MEMBERSHIP` (
@@ -646,7 +673,7 @@ CREATE TABLE `MEMBERSHIP` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- data for table `MEMBERSHIP`
+-- Dumping data for table `MEMBERSHIP`
 --
 
 INSERT INTO `MEMBERSHIP` (`Id`, `First_Name`, `Last_Name`, `Card_Number`, `Account_Number`, `Phone_Number`, `Points_Acquired`, `Address`, `Age`, `Sex`, `Email`) VALUES
@@ -754,7 +781,7 @@ INSERT INTO `MEMBERSHIP` (`Id`, `First_Name`, `Last_Name`, `Card_Number`, `Accou
 -- --------------------------------------------------------
 
 --
---  table `MOVIE`
+-- Table structure for table `MOVIE`
 --
 
 CREATE TABLE `MOVIE` (
@@ -769,7 +796,7 @@ CREATE TABLE `MOVIE` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
---  data for table `MOVIE`
+-- Dumping data for table `MOVIE`
 --
 
 INSERT INTO `MOVIE` (`Id`, `Title`, `Language`, `Release_Date`, `Lead_Cast`, `Director_Name`, `Movie_ratings_Id`, `Movie_supplier_Id`) VALUES
@@ -792,7 +819,7 @@ INSERT INTO `MOVIE` (`Id`, `Title`, `Language`, `Release_Date`, `Lead_Cast`, `Di
 -- --------------------------------------------------------
 
 --
---  table `MOVIE_GENRE`
+-- Table structure for table `MOVIE_GENRE`
 --
 
 CREATE TABLE `MOVIE_GENRE` (
@@ -801,7 +828,7 @@ CREATE TABLE `MOVIE_GENRE` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
---  data for table `MOVIE_GENRE`
+-- Dumping data for table `MOVIE_GENRE`
 --
 
 INSERT INTO `MOVIE_GENRE` (`Genre_Id`, `Movie_ID`) VALUES
@@ -824,7 +851,7 @@ INSERT INTO `MOVIE_GENRE` (`Genre_Id`, `Movie_ID`) VALUES
 -- --------------------------------------------------------
 
 --
---  table `MOVIE_RATINGS`
+-- Table structure for table `MOVIE_RATINGS`
 --
 
 CREATE TABLE `MOVIE_RATINGS` (
@@ -833,7 +860,7 @@ CREATE TABLE `MOVIE_RATINGS` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
---  table `MOVIE_RATINGS`
+-- Dumping data for table `MOVIE_RATINGS`
 --
 
 INSERT INTO `MOVIE_RATINGS` (`Id`, `Rating_Description`) VALUES
@@ -847,7 +874,7 @@ INSERT INTO `MOVIE_RATINGS` (`Id`, `Rating_Description`) VALUES
 -- --------------------------------------------------------
 
 --
--- table `MOVIE_SHOWING`
+-- Table structure for table `MOVIE_SHOWING`
 --
 
 CREATE TABLE `MOVIE_SHOWING` (
@@ -860,7 +887,7 @@ CREATE TABLE `MOVIE_SHOWING` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- data for table `MOVIE_SHOWING`
+-- Dumping data for table `MOVIE_SHOWING`
 --
 
 INSERT INTO `MOVIE_SHOWING` (`Id`, `Duration`, `Start_time`, `Cinema_Id`, `Movie_Id`, `Showing_room_Id`) VALUES
@@ -888,7 +915,7 @@ INSERT INTO `MOVIE_SHOWING` (`Id`, `Duration`, `Start_time`, `Cinema_Id`, `Movie
 -- --------------------------------------------------------
 
 --
---  table `MOVIE_SUPPLIER`
+-- Table structure for table `MOVIE_SUPPLIER`
 --
 
 CREATE TABLE `MOVIE_SUPPLIER` (
@@ -901,7 +928,7 @@ CREATE TABLE `MOVIE_SUPPLIER` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
---  data for table `MOVIE_SUPPLIER`
+-- Dumping data for table `MOVIE_SUPPLIER`
 --
 
 INSERT INTO `MOVIE_SUPPLIER` (`Id`, `First_Name`, `Last_Name`, `Phone_Number`, `Address`, `Number_of_Movies`) VALUES
@@ -919,7 +946,7 @@ INSERT INTO `MOVIE_SUPPLIER` (`Id`, `First_Name`, `Last_Name`, `Phone_Number`, `
 -- --------------------------------------------------------
 
 --
---  table `OFFER`
+-- Table structure for table `OFFER`
 --
 
 CREATE TABLE `OFFER` (
@@ -928,7 +955,7 @@ CREATE TABLE `OFFER` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
---  data for table `OFFER`
+-- Dumping data for table `OFFER`
 --
 
 INSERT INTO `OFFER` (`Discount_Id`, `Ticket_Id`) VALUES
@@ -966,7 +993,7 @@ INSERT INTO `OFFER` (`Discount_Id`, `Ticket_Id`) VALUES
 -- --------------------------------------------------------
 
 --
---  table `RECEIPT`
+-- Table structure for table `RECEIPT`
 --
 
 CREATE TABLE `RECEIPT` (
@@ -980,7 +1007,7 @@ CREATE TABLE `RECEIPT` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
---  data for table `RECEIPT`
+-- Dumping data for table `RECEIPT`
 --
 
 INSERT INTO `RECEIPT` (`Id`, `Receipt_Date`, `Receipt_Time`, `Cinema_Id`, `Price`, `Discout_applied`, `Customers_Id`) VALUES
@@ -1065,7 +1092,7 @@ INSERT INTO `RECEIPT` (`Id`, `Receipt_Date`, `Receipt_Time`, `Cinema_Id`, `Price
 -- --------------------------------------------------------
 
 --
---  table `SHOWING_ROOM`
+-- Table structure for table `SHOWING_ROOM`
 --
 
 CREATE TABLE `SHOWING_ROOM` (
@@ -1078,7 +1105,7 @@ CREATE TABLE `SHOWING_ROOM` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- data for table `SHOWING_ROOM`
+-- Dumping data for table `SHOWING_ROOM`
 --
 
 INSERT INTO `SHOWING_ROOM` (`Id`, `Seats`, `Screen_Width`, `Screen_Length`, `Room_Type`, `Movie_showing_Id`) VALUES
@@ -1095,7 +1122,7 @@ INSERT INTO `SHOWING_ROOM` (`Id`, `Seats`, `Screen_Width`, `Screen_Length`, `Roo
 -- --------------------------------------------------------
 
 --
---  table `TICKET`
+-- Table structure for table `TICKET`
 --
 
 CREATE TABLE `TICKET` (
@@ -1103,117 +1130,270 @@ CREATE TABLE `TICKET` (
   `Show_Date` varchar(100) NOT NULL,
   `Show_Time` varchar(10) NOT NULL,
   `Quantity` int(8) NOT NULL,
-  `Admin_Id` int(8) DEFAULT NULL
+  `Admin_Id` int(8) DEFAULT NULL,
+  `Cinema_Id` int(8) DEFAULT NULL,
+  `Movie_Id` int(8) DEFAULT NULL,
+  `Customer_Id` int(8) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- data for table `TICKET`
+-- Dumping data for table `TICKET`
 --
 
-INSERT INTO `TICKET` (`Id`, `Show_Date`, `Show_Time`, `Quantity`, `Admin_Id`) VALUES
-(1, 'Jan 14, 2020', '6PM', 2, 106),
-(2, 'Feb 20, 2020', '6PM', 3, 119),
-(3, 'Mar 16, 2020', '6PM', 2, 155),
-(4, 'Feb 9, 2020', '6PM', 1, 155),
-(5, 'Jan 21, 2020', '6PM', 1, 112),
-(6, 'Feb 27, 2020', '6PM', 4, 121),
-(7, 'Feb 18, 2020', '6PM', 1, 147),
-(8, 'Jan 22, 2020', '6PM', 1, 118),
-(9, 'Mar 2, 2020', '6PM', 1, 116),
-(10, 'Jan 21, 2020', '6PM', 3, 139),
-(11, 'Feb 20, 2020', '8PM', 2, 126),
-(12, 'Jan 8, 2020', '8PM', 1, 138),
-(13, 'Jan 10, 2020', '8PM', 2, 120),
-(14, 'Feb 4, 2020', '8PM', 2, 145),
-(15, 'Jan 7, 2020', '8PM', 4, 110),
-(16, 'Jan 29, 2020', '8PM', 4, 124),
-(17, 'Jan 26, 2020', '8PM', 2, 120),
-(18, 'Feb 12, 2020', '8PM', 4, 100),
-(19, 'Feb 20, 2020', '8PM', 3, 156),
-(20, 'Feb 7, 2020', '8PM', 4, 138),
-(21, 'Feb 23, 2020', '10PM', 2, 102),
-(22, 'Jan 22, 2020', '10PM', 2, 121),
-(23, 'Feb 12, 2020', '10PM', 1, 154),
-(24, 'Jan 23, 2020', '10PM', 3, 158),
-(25, 'Mar 3, 2020', '10PM', 1, 156),
-(26, 'Feb 13, 2020', '10PM', 4, 157),
-(27, 'Jan 22, 2020', '10PM', 4, 148),
-(28, 'Jan 28, 2020', '10PM', 4, 121),
-(29, 'Jan 21, 2020', '10PM', 2, 110),
-(30, 'Feb 8, 2020', '10PM', 4, 145),
-(31, 'Feb 23, 2020', '11PM', 3, 151),
-(32, 'Jan 12, 2020', '11PM', 1, 146),
-(33, 'Mar 7, 2020', '11PM', 2, 134),
-(34, 'Feb 8, 2020', '11PM', 3, 139),
-(35, 'Feb 10, 2020', '11PM', 3, 152),
-(36, 'Mar 17, 2020', '11PM', 4, 153),
-(37, 'Feb 10, 2020', '11PM', 3, 126),
-(38, 'Mar 5, 2020', '11PM', 3, 158),
-(39, 'Feb 28, 2020', '11PM', 2, 140),
-(40, 'Jan 12, 2020', '11PM', 2, 135),
-(41, 'Jan 26, 2020', '6PM', 2, 105),
-(42, 'Feb 6, 2020', '6PM', 3, 107),
-(43, 'Mar 17, 2020', '6PM', 1, 148),
-(44, 'Feb 24, 2020', '6PM', 2, 119),
-(45, 'Mar 16, 2020', '6PM', 4, 121),
-(46, 'Feb 21, 2020', '6PM', 3, 111),
-(47, 'Feb 20, 2020', '6PM', 2, 107),
-(48, 'Mar 6, 2020', '6PM', 1, 119),
-(49, 'Feb 20, 2020', '6PM', 4, 143),
-(50, 'Feb 25, 2020', '6PM', 3, 132),
-(51, 'Feb 5, 2020', '8PM', 2, 129),
-(52, 'Mar 14, 2020', '8PM', 2, 107),
-(53, 'Feb 4, 2020', '8PM', 1, 136),
-(54, 'Mar 7, 2020', '8PM', 3, 151),
-(55, 'Feb 16, 2020', '8PM', 4, 112),
-(56, 'Jan 30, 2020', '8PM', 4, 147),
-(57, 'Jan 30, 2020', '8PM', 1, 121),
-(58, 'Jan 16, 2020', '8PM', 2, 126),
-(59, 'Feb 24, 2020', '8PM', 1, 132),
-(60, 'Feb 11, 2020', '8PM', 3, 129),
-(61, 'Feb 26, 2020', '10PM', 2, 130),
-(62, 'Mar 11, 2020', '10PM', 4, 108),
-(63, 'Jan 10, 2020', '10PM', 3, 158),
-(64, 'Mar 17, 2020', '10PM', 3, 130),
-(65, 'Mar 11, 2020', '10PM', 2, 105),
-(66, 'Feb 21, 2020', '10PM', 1, 105),
-(67, 'Jan 17, 2020', '10PM', 2, 102),
-(68, 'Mar 1, 2020', '10PM', 2, 116),
-(69, 'Mar 2, 2020', '10PM', 4, 145),
-(70, 'Jan 26, 2020', '10PM', 4, 155),
-(71, 'Jan 28, 2020', '11PM', 2, 115),
-(72, 'Mar 14, 2020', '11PM', 2, 154),
-(73, 'Jan 16, 2020', '11PM', 4, 128),
-(74, 'Feb 6, 2020', '11PM', 4, 141),
-(75, 'Feb 8, 2020', '11PM', 3, 103),
-(76, 'Mar 10, 2020', '11PM', 3, 145),
-(77, 'Jan 18, 2020', '11PM', 1, 108),
-(78, 'Jan 13, 2020', '11PM', 2, 123),
-(79, 'Mar 17, 2020', '11PM', 3, 148),
-(80, 'Feb 25, 2020', '11PM', 4, 113),
-(81, 'Feb 2, 2020', '6PM', 4, 101),
-(82, 'Mar 7, 2020', '6PM', 3, 106),
-(83, 'Mar 16, 2020', '6PM', 1, 148),
-(84, 'Mar 13, 2020', '6PM', 3, 112),
-(85, 'Jan 20, 2020', '6PM', 4, 127),
-(86, 'Feb 20, 2020', '6PM', 4, 157),
-(87, 'Jan 26, 2020', '6PM', 2, 130),
-(88, 'Mar 16, 2020', '6PM', 1, 128),
-(89, 'Mar 4, 2020', '6PM', 2, 147),
-(90, 'Feb 10, 2020', '6PM', 1, 120),
-(91, 'Jan 31, 2020', '8PM', 1, 104),
-(92, 'Mar 15, 2020', '8PM', 4, 150),
-(93, 'Jan 8, 2020', '8PM', 4, 122),
-(94, 'Mar 9, 2020', '8PM', 4, 124),
-(95, 'Jan 19, 2020', '8PM', 2, 112),
-(96, 'Jan 12, 2020', '8PM', 4, 152),
-(97, 'Jan 15, 2020', '8PM', 3, 139),
-(98, 'Jan 29, 2020', '8PM', 2, 114),
-(99, 'Jan 17, 2020', '8PM', 3, 131),
-(100, 'Feb 7, 2020', '8PM', 2, 159);
+INSERT INTO `TICKET` (`Id`, `Show_Date`, `Show_Time`, `Quantity`, `Admin_Id`, `Cinema_Id`, `Movie_Id`, `Customer_Id`) VALUES
+(1, 'Jan 14, 2020', '6PM', 2, 106, 10, 15, 101),
+(2, 'Feb 20, 2020', '6PM', 3, 119, 1, 4, 102),
+(3, 'Mar 16, 2020', '6PM', 2, 155, 5, 10, 103),
+(4, 'Feb 9, 2020', '6PM', 1, 155, 10, 6, 104),
+(5, 'Jan 21, 2020', '6PM', 1, 112, 7, 7, 105),
+(6, 'Feb 27, 2020', '6PM', 4, 121, 9, 11, 106),
+(7, 'Feb 18, 2020', '6PM', 1, 147, 1, 8, 107),
+(8, 'Jan 22, 2020', '6PM', 1, 118, 5, 15, 108),
+(9, 'Mar 2, 2020', '6PM', 1, 116, 6, 9, 109),
+(10, 'Jan 21, 2020', '6PM', 3, 139, 7, 8, 110),
+(11, 'Feb 20, 2020', '8PM', 2, 126, 6, 11, 111),
+(12, 'Jan 8, 2020', '8PM', 1, 138, 10, 5, 112),
+(13, 'Jan 10, 2020', '8PM', 2, 120, 10, 5, 113),
+(14, 'Feb 4, 2020', '8PM', 2, 145, 10, 5, 114),
+(15, 'Jan 7, 2020', '8PM', 4, 110, 10, 6, 115),
+(16, 'Jan 29, 2020', '8PM', 4, 124, 10, 6, 116),
+(17, 'Jan 26, 2020', '8PM', 2, 120, 10, 6, 117),
+(18, 'Feb 12, 2020', '8PM', 4, 100, 10, 6, 118),
+(19, 'Feb 20, 2020', '8PM', 3, 156, 10, 5, 119),
+(20, 'Feb 7, 2020', '8PM', 4, 138, 10, 4, 120),
+(21, 'Feb 23, 2020', '10PM', 2, 102, 10, 4, 121),
+(22, 'Jan 22, 2020', '10PM', 2, 121, 10, 15, 122),
+(23, 'Feb 12, 2020', '10PM', 1, 154, 10, 15, 123),
+(24, 'Jan 23, 2020', '10PM', 3, 158, 10, 15, 124),
+(25, 'Mar 3, 2020', '10PM', 1, 156, 10, 15, 125),
+(26, 'Feb 13, 2020', '10PM', 4, 157, 10, 15, 126),
+(27, 'Jan 22, 2020', '10PM', 4, 148, 10, 15, 127),
+(28, 'Jan 28, 2020', '10PM', 4, 121, 10, 15, 128),
+(29, 'Jan 21, 2020', '10PM', 2, 110, 10, 15, 129),
+(30, 'Feb 8, 2020', '10PM', 4, 145, 10, 15, 130),
+(31, 'Feb 23, 2020', '11PM', 3, 151, 10, 15, 131),
+(32, 'Jan 12, 2020', '11PM', 1, 146, 10, 15, 132),
+(33, 'Mar 7, 2020', '11PM', 2, 134, 10, 15, 133),
+(34, 'Feb 8, 2020', '11PM', 3, 139, 10, 15, 134),
+(35, 'Feb 10, 2020', '11PM', 3, 152, 10, 15, 135),
+(36, 'Mar 17, 2020', '11PM', 4, 153, 10, 15, 136),
+(37, 'Feb 10, 2020', '11PM', 3, 126, 10, 15, 137),
+(38, 'Mar 5, 2020', '11PM', 3, 158, 10, 15, 138),
+(39, 'Feb 28, 2020', '11PM', 2, 140, 10, 15, 139),
+(40, 'Jan 12, 2020', '11PM', 2, 135, 10, 15, 140),
+(41, 'Jan 26, 2020', '6PM', 2, 105, 8, 4, 141),
+(42, 'Feb 6, 2020', '6PM', 3, 107, 8, 4, 143),
+(43, 'Mar 17, 2020', '6PM', 1, 148, 8, 4, 143),
+(44, 'Feb 24, 2020', '6PM', 2, 119, 8, 4, 144),
+(45, 'Mar 16, 2020', '6PM', 4, 121, 8, 4, 145),
+(46, 'Feb 21, 2020', '6PM', 3, 111, 8, 4, 146),
+(47, 'Feb 20, 2020', '6PM', 2, 107, 8, 4, 147),
+(48, 'Mar 6, 2020', '6PM', 1, 119, 8, 4, 148),
+(49, 'Feb 20, 2020', '6PM', 4, 143, 8, 4, 149),
+(50, 'Feb 25, 2020', '6PM', 3, 132, 8, 4, 150),
+(51, 'Feb 5, 2020', '8PM', 2, 129, 8, 4, 151),
+(52, 'Mar 14, 2020', '8PM', 2, 107, 8, 4, 152),
+(53, 'Feb 4, 2020', '8PM', 1, 136, 8, 4, 153),
+(54, 'Mar 7, 2020', '8PM', 3, 151, 8, 4, 154),
+(55, 'Feb 16, 2020', '8PM', 4, 112, 8, 4, 155),
+(56, 'Jan 30, 2020', '8PM', 4, 147, 8, 4, 156),
+(57, 'Jan 30, 2020', '8PM', 1, 121, 8, 4, 157),
+(58, 'Jan 16, 2020', '8PM', 2, 126, 8, 4, 158),
+(59, 'Feb 24, 2020', '8PM', 1, 132, 8, 4, 159),
+(60, 'Feb 11, 2020', '8PM', 3, 129, 8, 4, NULL),
+(61, 'Feb 26, 2020', '10PM', 2, 130, 8, 4, 160),
+(62, 'Mar 11, 2020', '10PM', 4, 108, 8, 4, 162),
+(63, 'Jan 10, 2020', '10PM', 3, 158, 8, 4, 163),
+(64, 'Mar 17, 2020', '10PM', 3, 130, 8, 4, 164),
+(65, 'Mar 11, 2020', '10PM', 2, 105, 8, 4, 165),
+(66, 'Feb 21, 2020', '10PM', 1, 105, 8, 4, 166),
+(67, 'Jan 17, 2020', '10PM', 2, 102, 8, 4, 167),
+(68, 'Mar 1, 2020', '10PM', 2, 116, 8, 4, 168),
+(69, 'Mar 2, 2020', '10PM', 4, 145, 8, 4, 169),
+(70, 'Jan 26, 2020', '10PM', 4, 155, 5, 10, 170),
+(71, 'Jan 28, 2020', '11PM', 2, 115, 5, 10, 171),
+(72, 'Mar 14, 2020', '11PM', 2, 154, 5, 10, 172),
+(73, 'Jan 16, 2020', '11PM', 4, 128, 5, 10, 173),
+(74, 'Feb 6, 2020', '11PM', 4, 141, 5, 10, 174),
+(75, 'Feb 8, 2020', '11PM', 3, 103, 5, 10, 175),
+(76, 'Mar 10, 2020', '11PM', 3, 145, 5, 10, 176),
+(77, 'Jan 18, 2020', '11PM', 1, 108, 5, 10, 177),
+(78, 'Jan 13, 2020', '11PM', 2, 123, 5, 10, 178),
+(79, 'Mar 17, 2020', '11PM', 3, 148, 5, 10, 179),
+(80, 'Feb 25, 2020', '11PM', 4, 113, 5, 10, 180),
+(81, 'Feb 2, 2020', '6PM', 4, 101, 5, 10, 181),
+(82, 'Mar 7, 2020', '6PM', 3, 106, 5, 10, 182),
+(83, 'Mar 16, 2020', '6PM', 1, 148, 5, 10, 183),
+(84, 'Mar 13, 2020', '6PM', 3, 112, 5, 10, 184),
+(85, 'Jan 20, 2020', '6PM', 4, 127, 5, 10, 185),
+(86, 'Feb 20, 2020', '6PM', 4, 157, 5, 10, 186),
+(87, 'Jan 26, 2020', '6PM', 2, 130, 5, 10, 187),
+(88, 'Mar 16, 2020', '6PM', 1, 128, 5, 10, 188),
+(89, 'Mar 4, 2020', '6PM', 2, 147, 5, 10, 189),
+(90, 'Feb 10, 2020', '6PM', 1, 120, 10, 15, 190),
+(91, 'Jan 31, 2020', '8PM', 1, 104, 10, 15, 191),
+(92, 'Mar 15, 2020', '8PM', 4, 150, 10, 15, 192),
+(93, 'Jan 8, 2020', '8PM', 4, 122, 10, 15, 193),
+(94, 'Mar 9, 2020', '8PM', 4, 124, 10, 15, 194),
+(95, 'Jan 19, 2020', '8PM', 2, 112, 10, 15, 195),
+(96, 'Jan 12, 2020', '8PM', 4, 152, 10, 15, 196),
+(97, 'Jan 15, 2020', '8PM', 3, 139, 10, 15, 197),
+(98, 'Jan 29, 2020', '8PM', 2, 114, 10, 15, 198),
+(99, 'Jan 17, 2020', '8PM', 3, 131, 10, 15, 199),
+(100, 'Feb 7, 2020', '8PM', 2, 159, 10, 15, 200),
+(101, 'Feb 13, 2019', '6PM', 2, 118, 9, 6, 201),
+(102, 'Feb 27, 2019', '6PM', 2, 109, 2, 6, 202),
+(103, 'Feb 12, 2019', '6PM', 3, 105, 2, 14, 203),
+(104, 'Feb 27, 2019', '6PM', 2, 104, 8, 12, 204),
+(105, 'Feb 12, 2019', '6PM', 2, 117, 5, 4, 205),
+(106, 'Feb 27, 2019', '6PM', 2, 103, 9, 5, 206),
+(107, 'Feb 12, 2019', '6PM', 2, 108, 3, 7, 207),
+(108, 'Feb 27, 2019', '6PM', 2, 102, 9, 15, 208),
+(109, 'Feb 12, 2019', '8PM', 1, 116, 4, 8, 209),
+(110, 'Feb 27, 2019', '8PM', 1, 117, 6, 4, 210),
+(111, 'Feb 16, 2019', '8PM', 2, 111, 10, 8, 211),
+(112, 'Feb 18, 2019', '8PM', 1, 112, 7, 12, 212),
+(113, 'Feb 23, 2019', '8PM', 1, 117, 4, 13, 213),
+(114, 'Feb 18, 2019', '8PM', 3, 115, 2, 13, 214),
+(115, 'Feb 17, 2019', '8PM', 2, 110, 7, 12, 215),
+(116, 'Feb 18, 2019', '8PM', 2, 120, 10, 9, 216),
+(117, 'Feb 23, 2019', '10PM', 3, 105, 9, 12, 217),
+(118, 'Feb 18, 2019', '10PM', 1, 117, 8, 12, 218),
+(119, 'Feb 27, 2019', '10PM', 3, 105, 8, 10, 219),
+(120, 'Feb 27, 2019', '10PM', 2, 112, 4, 15, 220),
+(121, 'Feb 21, 2019', '10PM', 2, 117, 5, 11, 221),
+(122, 'Feb 27, 2019', '10PM', 1, 106, 3, 6, 222),
+(123, 'Feb 23, 2019', '10PM', 2, 108, 5, 12, 223),
+(124, 'Feb 27, 2019', '10PM', 3, 117, 9, 6, 224),
+(125, 'Feb 20, 2019', '6PM', 1, 109, 7, 12, 225),
+(126, 'Feb 12, 2019', '6PM', 1, 118, 6, 11, 226),
+(127, 'Feb 18, 2019', '6PM', 2, 113, 5, 6, 227),
+(128, 'Feb 12, 2019', '6PM', 3, 105, 2, 7, 228),
+(129, 'Feb 12, 2019', '6PM', 2, 113, 7, 13, 229),
+(130, 'Feb 27, 2019', '6PM', 3, 114, 9, 8, 230),
+(131, 'Feb 20, 2019', '6PM', 2, 116, 1, 10, 231),
+(132, 'Feb 24, 2019', '6PM', 3, 118, 6, 11, 232),
+(133, 'Feb 19, 2019', '8PM', 2, 115, 9, 9, 233),
+(134, 'Feb 23, 2019', '8PM', 3, 111, 7, 6, 234),
+(135, 'Feb 18, 2019', '8PM', 2, 118, 2, 15, 235),
+(136, 'Feb 12, 2019', '8PM', 3, 108, 10, 14, 236),
+(137, 'Feb 12, 2019', '8PM', 1, 118, 4, 11, 237),
+(138, 'Feb 18, 2019', '8PM', 2, 114, 4, 8, 238),
+(139, 'Feb 23, 2019', '8PM', 3, 109, 4, 12, 239),
+(140, 'Feb 27, 2019', '8PM', 1, 119, 6, 7, 240),
+(141, 'Feb 16, 2019', '10PM', 2, 111, 3, 4, 241),
+(142, 'Feb 15, 2019', '10PM', 2, 103, 3, 11, 242),
+(143, 'Feb 19, 2019', '10PM', 3, 119, 7, 6, 243),
+(144, 'Feb 18, 2019', '10PM', 3, 106, 9, 13, 244),
+(145, 'Feb 12, 2019', '10PM', 2, 115, 3, 4, 245),
+(146, 'Feb 23, 2019', '10PM', 1, 104, 1, 7, 246),
+(147, 'Feb 7, 2019', '10PM', 1, 111, 7, 4, 247),
+(148, 'Feb 27, 2019', '10PM', 2, 115, 3, 15, 248),
+(149, 'Feb 7, 2019', '6PM', 2, 111, 5, 15, 249),
+(150, 'Feb 27, 2019', '6PM', 3, 113, 3, 4, 250),
+(151, 'Feb 16, 2019', '6PM', 2, 111, 5, 10, 251),
+(152, 'Feb 22, 2019', '6PM', 1, 112, 1, 6, 252),
+(153, 'Feb 18, 2019', '6PM', 1, 119, 7, 4, 253),
+(154, 'Feb 12, 2019', '6PM', 1, 119, 9, 9, 254),
+(155, 'Feb 7, 2019', '6PM', 3, 108, 9, 8, 255),
+(156, 'Feb 23, 2019', '6PM', 1, 106, 9, 14, 256),
+(157, 'Feb 7, 2019', '8PM', 3, 104, 9, 12, 257),
+(158, 'Feb 27, 2019', '8PM', 3, 120, 8, 13, 258),
+(159, 'Feb 7, 2019', '8PM', 2, 111, 3, 12, 259),
+(160, 'Feb 18, 2019', '8PM', 2, 115, 6, 8, 260),
+(161, 'Feb 20, 2019', '8PM', 3, 104, 1, 9, 261),
+(162, 'Feb 23, 2019', '8PM', 1, 107, 1, 6, 262),
+(163, 'Feb 26, 2019', '8PM', 1, 110, 2, 5, 263),
+(164, 'Feb 27, 2019', '8PM', 1, 118, 8, 15, 264),
+(165, 'Feb 23, 2019', '10PM', 2, 109, 1, 8, 265),
+(166, 'Feb 23, 2019', '10PM', 1, 104, 2, 4, 266),
+(167, 'Feb 20, 2019', '10PM', 3, 104, 7, 8, 267),
+(168, 'Feb 20, 2019', '10PM', 2, 103, 5, 10, 268),
+(169, 'Feb 21, 2019', '10PM', 1, 106, 6, 7, 269),
+(170, 'Feb 12, 2019', '10PM', 1, 111, 8, 15, 270),
+(171, 'Feb 24, 2019', '10PM', 3, 103, 9, 14, 271),
+(172, 'Feb 16, 2019', '10PM', 3, 105, 8, 10, 272),
+(173, 'Feb 22, 2019', '6PM', 3, 119, 6, 11, 273),
+(174, 'Feb 7, 2019', '6PM', 2, 111, 10, 5, 274),
+(175, 'Feb 27 2019', '6PM', 3, 117, 7, 10, 275),
+(176, 'Feb 7, 2019', '6PM', 3, 116, 10, 6, 276),
+(177, 'Feb 23, 2019', '6PM', 2, 109, 4, 7, 277),
+(178, 'Feb 7, 2019', '6PM', 1, 106, 1, 13, 278),
+(179, 'Feb 20, 2019', '6PM', 1, 119, 10, 5, 279),
+(180, 'Feb 12, 2019', '6PM', 1, 114, 2, 15, 280),
+(181, 'Feb 16, 2019', '8PM', 1, 114, 6, 10, 281),
+(182, 'Feb 15, 2019', '8PM', 1, 103, 3, 4, 282),
+(183, 'Feb 13, 2019', '8PM', 1, 102, 7, 6, 283),
+(184, 'Feb 12, 2019', '8PM', 1, 118, 9, 6, 284),
+(185, 'Feb 12, 2019', '8PM', 3, 106, 3, 14, 285),
+(186, 'Feb 7, 2019', '8PM', 2, 118, 9, 10, 286),
+(187, 'Feb 23, 2019', '8PM', 2, 102, 6, 15, 287),
+(188, 'Feb 12, 2019', '8PM', 1, 115, 9, 8, 288),
+(189, 'Feb 20, 2019', '10PM', 3, 119, 1, 13, 289),
+(190, 'Feb 20, 2019', '10PM', 1, 117, 1, 6, 290),
+(191, 'Feb 14, 2019', '10PM', 3, 120, 9, 5, 291),
+(192, 'Feb 26, 2019', '10PM', 2, 104, 10, 14, 292),
+(193, 'Feb 17, 2019', '10PM', 3, 107, 1, 11, 293),
+(194, 'Feb 12, 2019', '10PM', 3, 110, 4, 4, 294),
+(195, 'Feb 27, 2019', '10PM', 1, 120, 2, 8, 295),
+(196, 'Feb 23, 2019', '10PM', 2, 112, 10, 10, 296),
+(197, 'Feb 7, 2019', '6PM', 1, 103, 2, 5, 297),
+(198, 'Feb 23, 2019', '6PM', 2, 106, 10, 12, 298),
+(199, 'Feb 27, 2019', '6PM', 3, 103, 7, 12, 299),
+(200, 'Feb 7, 2019', '6PM', 2, 115, 6, 12, 300),
+(201, 'Feb 13, 2019', '6PM', 2, 118, 9, 6, 201),
+(202, 'Feb 16, 2019', '6PM', 2, 109, 2, 6, 202),
+(203, 'Feb 25, 2019', '6PM', 3, 105, 2, 14, 203),
+(204, 'Feb 16, 2019', '6PM', 2, 104, 8, 12, 204),
+(205, 'Feb 19, 2019', '6PM', 2, 117, 5, 4, 205),
+(206, 'Feb 15, 2019', '6PM', 2, 103, 9, 5, 206),
+(207, 'Feb 16, 2019', '6PM', 2, 108, 3, 7, 207),
+(208, 'Feb 16, 2019', '6PM', 2, 102, 9, 15, 208),
+(209, 'Feb 22, 2019', '8PM', 1, 116, 4, 8, 209),
+(210, 'Feb 16, 2019', '8PM', 1, 117, 6, 4, 210),
+(211, 'Feb 16, 2019', '8PM', 2, 112, 10, 8, 211),
+(212, 'Feb 15, 2019', '8PM', 1, 112, 7, 12, 212),
+(213, 'Feb 22, 2019', '8PM', 1, 117, 4, 13, 213),
+(214, 'Feb 25, 2019', '8PM', 3, 115, 2, 13, 214),
+(215, 'Feb 17, 2019', '8PM', 2, 110, 7, 12, 215),
+(216, 'Feb 12, 2019', '8PM', 2, 120, 10, 9, 216),
+(217, 'Feb 23, 2019', '10PM', 3, 105, 9, 12, 217),
+(218, 'Feb 19, 2019', '10PM', 1, 117, 8, 12, 218),
+(219, 'Feb 27, 2019', '10PM', 3, 105, 8, 10, 219),
+(220, 'Feb 27, 2019', '10PM', 2, 112, 4, 15, 220),
+(221, 'Feb 21, 2019', '10PM', 2, 117, 5, 11, 221),
+(222, 'Feb 27, 2019', '10PM', 1, 106, 3, 6, 222),
+(223, 'Feb 23, 2019', '10PM', 2, 108, 5, 12, 223),
+(224, 'Feb 17, 2019', '10PM', 3, 117, 9, 6, 224),
+(225, 'Feb 20, 2019', '6PM', 1, 109, 7, 12, 225),
+(226, 'Feb 14, 2019', '6PM', 1, 118, 6, 11, 226),
+(227, 'Feb 18, 2019', '6PM', 2, 113, 5, 6, 227),
+(228, 'Feb 13, 2019', '6PM', 3, 105, 2, 7, 228),
+(229, 'Feb 14, 2019', '6PM', 2, 113, 7, 13, 229),
+(230, 'Feb 26, 2019', '6PM', 3, 114, 9, 8, 230),
+(231, 'Feb 20, 2019', '6PM', 2, 116, 1, 10, 231),
+(232, 'Feb 24, 2019', '6PM', 3, 118, 6, 11, 232),
+(233, 'Feb 19, 2019', '8PM', 2, 115, 9, 9, 233),
+(234, 'Feb 23, 2019', '8PM', 3, 111, 7, 6, 234),
+(235, 'Feb 18, 2019', '8PM', 2, 118, 2, 15, 235),
+(236, 'Feb 12, 2019', '8PM', 3, 108, 10, 14, 236),
+(237, 'Feb 12, 2019', '8PM', 1, 118, 4, 11, 237),
+(238, 'Feb 18, 2019', '8PM', 2, 114, 4, 8, 238),
+(239, 'Feb 20, 2019', '8PM', 3, 109, 4, 12, 239),
+(240, 'Feb 25, 2019', '8PM', 1, 119, 6, 7, 240),
+(241, 'Feb 16, 2019', '10PM', 2, 111, 3, 4, 241),
+(242, 'Feb 15, 2019', '10PM', 2, 103, 3, 11, 242),
+(243, 'Feb 19, 2019', '10PM', 3, 119, 7, 6, 243),
+(244, 'Feb 19, 2019', '10PM', 3, 106, 9, 13, 244),
+(245, 'Feb 14, 2019', '10PM', 2, 115, 3, 4, 245),
+(246, 'Feb 22, 2019', '10PM', 1, 104, 1, 7, 246),
+(247, 'Feb 18, 2019', '10PM', 1, 111, 7, 4, 247),
+(248, 'Feb 27, 2019', '10PM', 2, 115, 3, 15, 248),
+(249, 'Feb 22, 2019', '6PM', 2, 111, 5, 15, 249),
+(250, 'Feb 27, 2019', '6PM', 3, 113, 3, 4, 250);
 
 --
--- Indexes for tables
+-- Indexes for dumped tables
 --
 
 --
@@ -1232,7 +1412,8 @@ ALTER TABLE `CINEMA`
 -- Indexes for table `CUSTOMER`
 --
 ALTER TABLE `CUSTOMER`
-  ADD PRIMARY KEY (`Id`);
+  ADD PRIMARY KEY (`Id`),
+  ADD KEY `fk_Membership` (`Membership_Id`);
 
 --
 -- Indexes for table `DISCOUNT`
@@ -1327,7 +1508,10 @@ ALTER TABLE `SHOWING_ROOM`
 --
 ALTER TABLE `TICKET`
   ADD PRIMARY KEY (`Id`),
-  ADD KEY `fk_Admin` (`Admin_Id`);
+  ADD KEY `fk_Admin` (`Admin_Id`),
+  ADD KEY `fk_Cinema2` (`Cinema_Id`),
+  ADD KEY `fk_Movie2` (`Movie_Id`),
+  ADD KEY `fk_Customer2` (`Customer_Id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -1386,6 +1570,12 @@ ALTER TABLE `SHOWING_ROOM`
 --
 
 --
+-- Constraints for table `CUSTOMER`
+--
+ALTER TABLE `CUSTOMER`
+  ADD CONSTRAINT `fk_Membership` FOREIGN KEY (`Membership_Id`) REFERENCES `MEMBERSHIP` (`Id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
 -- Constraints for table `ITEM_LINE`
 --
 ALTER TABLE `ITEM_LINE`
@@ -1418,8 +1608,8 @@ ALTER TABLE `MOVIE_SHOWING`
 -- Constraints for table `OFFER`
 --
 ALTER TABLE `OFFER`
-  ADD CONSTRAINT `fk_Discount` FOREIGN KEY (`Discount_Id`) REFERENCES `Discount` (`ID`),
-  ADD CONSTRAINT `fk_Ticket` FOREIGN KEY (`Ticket_Id`) REFERENCES `Ticket` (`Id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `fk_Discount` FOREIGN KEY (`Discount_Id`) REFERENCES `DISCOUNT` (`ID`),
+  ADD CONSTRAINT `fk_Ticket` FOREIGN KEY (`Ticket_Id`) REFERENCES `TICKET` (`Id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `RECEIPT`
@@ -1437,5 +1627,12 @@ ALTER TABLE `SHOWING_ROOM`
 -- Constraints for table `TICKET`
 --
 ALTER TABLE `TICKET`
-  ADD CONSTRAINT `fk_Admin` FOREIGN KEY (`Admin_Id`) REFERENCES `ADMIN` (`Id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `fk_Admin` FOREIGN KEY (`Admin_Id`) REFERENCES `ADMIN` (`Id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_Cinema2` FOREIGN KEY (`Cinema_Id`) REFERENCES `CINEMA` (`Id`),
+  ADD CONSTRAINT `fk_Customer2` FOREIGN KEY (`Customer_Id`) REFERENCES `CUSTOMER` (`Id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_Movie2` FOREIGN KEY (`Movie_Id`) REFERENCES `MOVIE` (`Id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
